@@ -1,49 +1,27 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Video from 'react-native-video';
+import * as React from 'react';
+import { View, StyleSheet, Text} from 'react-native';
+import { Video } from 'expo-av';
 
-const App = () => {
-  const onBuffer = (data) => {
-    console.log("on buffering ======== >>>>", data)
-  }
+export default function App() {
 
-  const videoError = (data) => {
-    console.log("<<======== error while playing video =========>>", data)
-  }
-
-  return(
-    <View style={{ flex: 1 }}>
-      <Video 
-          source={require("./res/video/sm-loadvideo.mp4")}
-          onBuffer={onBuffer}
-          onError={videoError}
-          resizeMode="cover"
-          style={styles.bgvideoStyle}
+  return (
+    <View style={styles.container}>
+      <Video
+        style={styles.bgvideoStyle}
+        source={require("./res/video/sm-loadvideo.mp4")}
+        resizeMode="cover"
+        shouldPlay
       />
-      <View style={styles.loginStyle}>
-        <Text style={{ color: 'white', fontSize: 20}}>Login</Text>
-      </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center'
   },
   bgvideoStyle: {
-    height: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right:0
-  },
-  loginStyle: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    height: '100%'
   }
 });
-
-export default App;
