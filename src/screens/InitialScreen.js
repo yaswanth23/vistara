@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, ImageBackground} from 'react-native';
 
 const InitialScreen = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>Welcome to Vistara</Text>
         </View>
     );
@@ -11,7 +11,8 @@ const InitialScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#47143D'
     }
 });
 
