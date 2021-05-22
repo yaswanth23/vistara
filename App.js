@@ -1,28 +1,19 @@
-import * as React from 'react';
-import { View, StyleSheet, Text} from 'react-native';
-import { Video } from 'expo-av';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default function App() {
+import SplashScreen from './src/screens/SplashScreen';
+import InitialScreen from './src/screens/InitialScreen';
+import { Router, Scene } from 'react-native-router-flux';
 
-  return (
-    <View style={styles.container}>
-      <Video
-        style={styles.bgvideoStyle}
-        source={require("./res/video/sm-loadvideo.mp4")}
-        resizeMode="cover"
-        shouldPlay
-      />
-    </View>
-  );
-  
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
+const navigator = createStackNavigator(
+  {
+    Splash: SplashScreen,
+    Initial: InitialScreen
   },
-  bgvideoStyle: {
-    height: '100%'
+  {
+    mode: 'modal',
+    headerMode: 'none'
   }
-});
+);
+
+export default createAppContainer(navigator);
