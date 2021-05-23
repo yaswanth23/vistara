@@ -31,7 +31,6 @@ const InitialScreen = () =>{
             {/* <View style={styles.footer}>
                 <Text>Footer</Text>
             </View> */}
-
         </View>
     );
 };
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
         height: screenheight * 0.03,
     },
     header: {
-        flex: 1
+        flex: 0.9
     },
     // footer: {
     //     flex: 1,
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     //     paddingHorizontal:30
     // },
     bgvideoStyle: {
-         height: '100%'
+        height: '100%'
     },
     bottomView: {
         flex: 1.6,
