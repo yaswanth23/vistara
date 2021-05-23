@@ -87,23 +87,57 @@ const InitialScreen = ({navigation}) =>{
                             }
                         </TouchableOpacity>
                     </View>
+                    <View style={{
+                        alignItems: 'center'
+                    }}>
+                        <Text style={{
+                            color: '#b99750',
+                            marginTop: screenheight * 0.04,
+                            fontWeight: 'bold',
+                            fontSize: screenheight * 0.023,
+                        }}>
+                            Forget Password?
+                        </Text>
+                    </View>
                     <View style={styles.logInButton}>
-                    <LinearGradient
-                        colors={['#b99750', '#c5a96d']}
-                        style={styles.logInStyle}
-                    >
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('Booking')}
+                        <LinearGradient
+                            colors={['#b99750', '#c5a96d']}
+                            style={styles.logInStyle}
                         >
-                            <Text style={{
-                                color:'#271625',
-                                fontSize: screenheight * 0.03,
-                                fontWeight: 'bold'
-                            }}>
-                                Log In
-                            </Text>
-                        </TouchableOpacity>
-                    </LinearGradient>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('Booking')}
+                            >
+                                <Text style={{
+                                    color:'#271625',
+                                    fontSize: screenheight * 0.03,
+                                    fontWeight: 'bold'
+                                }}>
+                                    Log In
+                                </Text>
+                            </TouchableOpacity>
+                        </LinearGradient>
+                    </View>
+                    <View style={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexDirection: 'row',
+                        marginTop: screenheight * 0.04
+                    }}>
+                        <Text style={{
+                            color: '#fff',
+                            fontWeight: '300',
+                            fontSize: screenheight * 0.023,
+                        }}>
+                            Not a member ?
+                        </Text>
+                        <Text> </Text>
+                        <Text style={{
+                            color: '#b99750',
+                            fontWeight: 'bold',
+                            fontSize: screenheight * 0.023,
+                        }}>
+                            join now
+                        </Text>
                     </View>
                 </View>
             </View>
@@ -173,7 +207,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5
     },
     logInButton: {
-        marginTop: screenheight * 0.08,
+        marginTop: screenheight * 0.04,
         alignItems: 'center'
     },
     logInStyle: {
