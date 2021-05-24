@@ -1,5 +1,14 @@
 import React, {useState} from 'react';
-import {View, Image, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity} from 'react-native';
+import {
+    View,
+    Image,
+    Text,
+    StyleSheet,
+    Dimensions,
+    TextInput,
+    TouchableOpacity,
+    StatusBar
+} from 'react-native';
 import { Video } from 'expo-av';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
@@ -34,6 +43,7 @@ const InitialScreen = ({navigation}) =>{
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content"/>
             <View style={styles.header}>
                 <Video
                     style={styles.bgvideoStyle}
@@ -131,20 +141,24 @@ const InitialScreen = ({navigation}) =>{
                             Not a member ?
                         </Text>
                         <Text> </Text>
-                        <Text style={{
-                            color: '#b99750',
-                            fontWeight: 'bold',
-                            fontSize: 15,
-                        }}>
-                            join now
-                        </Text>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Booking')}
+                        >
+                            <Text style={{
+                                color: '#b99750',
+                                fontWeight: 'bold',
+                                fontSize: 15,
+                            }}>
+                                join now
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={{
                         alignItems: 'center',
                         marginTop: screenheight * 0.05
                     }}>
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('Booking')}
+                            onPress={() => navigation.navigate('BottomTab')}
                         >
                             <Text style={{
                                 color: '#b99750',
