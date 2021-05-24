@@ -9,7 +9,7 @@ const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
 
 const InitialScreen = ({navigation}) =>{
-    const val = screenheight * 0.08;
+    const val = screenheight * 0.025;
     console.log(val);
 
     const [data, setData] = useState({
@@ -94,7 +94,7 @@ const InitialScreen = ({navigation}) =>{
                             color: '#b99750',
                             marginTop: screenheight * 0.04,
                             fontWeight: 'bold',
-                            fontSize: screenheight * 0.023,
+                            fontSize: 15,
                         }}>
                             Forget Password?
                         </Text>
@@ -109,7 +109,7 @@ const InitialScreen = ({navigation}) =>{
                             >
                                 <Text style={{
                                     color:'#271625',
-                                    fontSize: screenheight * 0.03,
+                                    fontSize: 20,
                                     fontWeight: 'bold'
                                 }}>
                                     Log In
@@ -126,7 +126,7 @@ const InitialScreen = ({navigation}) =>{
                         <Text style={{
                             color: '#fff',
                             fontWeight: '300',
-                            fontSize: screenheight * 0.023,
+                            fontSize: 15,
                         }}>
                             Not a member ?
                         </Text>
@@ -134,7 +134,7 @@ const InitialScreen = ({navigation}) =>{
                         <Text style={{
                             color: '#b99750',
                             fontWeight: 'bold',
-                            fontSize: screenheight * 0.023,
+                            fontSize: 15,
                         }}>
                             join now
                         </Text>
@@ -149,7 +149,7 @@ const InitialScreen = ({navigation}) =>{
                             <Text style={{
                                 color: '#b99750',
                                 fontWeight: 'bold',
-                                fontSize: screenheight * 0.023,
+                                fontSize: 15,
                             }}>
                                 Enter as Guest
                             </Text>
@@ -203,16 +203,16 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingLeft: 10,
         color: '#b99750',
-        fontSize: screenheight * 0.022,
+        fontSize: 15,
     },
     emailTextStyle: {
         marginTop: 5,
-        fontSize: screenheight * 0.025,
+        fontSize: 16,
         color: '#fff'
     },
     passTextStyle: {
         marginTop: 25,
-        fontSize: screenheight * 0.025,
+        fontSize: 16,
         color: '#fff'
     },
     formDetail: {
