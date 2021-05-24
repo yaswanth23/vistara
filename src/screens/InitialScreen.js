@@ -139,6 +139,22 @@ const InitialScreen = ({navigation}) =>{
                             join now
                         </Text>
                     </View>
+                    <View style={{
+                        alignItems: 'center',
+                        marginTop: screenheight * 0.05
+                    }}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Booking')}
+                        >
+                            <Text style={{
+                                color: '#b99750',
+                                fontWeight: 'bold',
+                                fontSize: screenheight * 0.023,
+                            }}>
+                                Enter as Guest
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
             {/* <View style={styles.footer}>
