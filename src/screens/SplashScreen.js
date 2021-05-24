@@ -17,7 +17,7 @@ const EntityAction = StackActions.reset({
 export default class SplashScreen extends Component {
 
     componentDidMount() {
-        setTimeout( () => {this.load()}, 6000);
+        setTimeout( () => {this.load()}, 10000);
     }
     load = () => {
         this.props.navigation.dispatch(EntityAction);  
