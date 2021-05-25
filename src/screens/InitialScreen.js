@@ -142,7 +142,7 @@ const InitialScreen = ({navigation}) =>{
                         </Text>
                         <Text> </Text>
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('Booking')}
+                            onPress={() => navigation.navigate('Register')}
                         >
                             <Text style={{
                                 color: '#b99750',

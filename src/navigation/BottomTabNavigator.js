@@ -1,13 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import BookingInitialScreen from '../screens/BookingInitialScreen'
+import FlightSearchScreen from '../screens/FlightSearchScreen'
 import RegistrationScreen from '../screens/RegistrationScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TabBar from '../components/TabBar';
 
-function BookingScreen() {
+function FlightScreen() {
   return (
-    <BookingInitialScreen />
+    <FlightSearchScreen />
   );
 }
 
@@ -24,12 +24,12 @@ export default function BottomTabNavigator() {
     <NavigationContainer>
       <Tab.Navigator tabBar={(props) => <TabBar{...props} />}>
         <Tab.Screen 
-          name="Home"
-          component={BookingScreen}
+          name="Flight"
+          component={FlightScreen}
           initialParams={{icon: 'ios-airplane-outline'}}
         />
         <Tab.Screen 
-          name="Settings"
+          name="Profile"
           component={RegisterScreen}
           initialParams={{icon: 'ios-person-outline'}}
         />
