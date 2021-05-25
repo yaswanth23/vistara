@@ -109,13 +109,13 @@ const InitialScreen = ({navigation}) =>{
                             Forget Password?
                         </Text>
                     </View>
-                    <View style={styles.logInButton}>
-                        <LinearGradient
-                            colors={['#b99750', '#c5a96d']}
-                            style={styles.logInStyle}
-                        >
-                            <TouchableOpacity
-                                onPress={() => navigation.navigate('Booking')}
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('BottomTab')}
+                    >
+                        <View style={styles.logInButton}>
+                            <LinearGradient
+                                colors={['#b99750', '#c5a96d']}
+                                style={styles.logInStyle}
                             >
                                 <Text style={{
                                     color:'#271625',
@@ -124,9 +124,9 @@ const InitialScreen = ({navigation}) =>{
                                 }}>
                                     Log In
                                 </Text>
-                            </TouchableOpacity>
-                        </LinearGradient>
-                    </View>
+                            </LinearGradient>
+                        </View>
+                    </TouchableOpacity>
                     <View style={{
                         alignItems: 'center',
                         justifyContent: 'center',
