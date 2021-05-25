@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const FlightSearchScreen = () => {
+const CheckinScreen = () => {
     return (
         <View style={styles.container}>
-            <Text >Welcome to Flight screen</Text>
+            <Text >Welcome to checkin screen</Text>
         </View>
     );
 };
@@ -13,9 +13,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#997588'
+        alignItems: 'center'
     }
 });
 
-export default FlightSearchScreen;
+export default CheckinScreen;

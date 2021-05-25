@@ -9,7 +9,7 @@ const Tab = ({color, tab, onPress, icon}) => {
             style={styles.container}
             onPress={onPress}
         >
-            {icon && <Ionicons name={icon} size={24} color={color} /> }
+            {icon && <Ionicons name={icon} size={20} color={color} /> }
             <Text style={{color}}>{tab.name}</Text>
         </TouchableOpacity>
     );

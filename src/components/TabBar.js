@@ -9,7 +9,7 @@ const TabBar = ({state, navigation}) => {
     const [selected, setSelected] = useState('Home');
     const {routes} = state;
 
-    const renderColor = (currentTab) => (currentTab === selected ? '#b99750' : 'white');
+    const renderColor = (currentTab) => (currentTab === selected ? '#47143d' : '#997588');
 
     const handlePress = (activeTab) => {
         setSelected(activeTab);
@@ -37,7 +37,8 @@ const TabBar = ({state, navigation}) => {
 const styles = StyleSheet.create({
     wrapper: {
         //position: 'absolute',
-        bottom: 20,
+        //bottom: 15,
+        backgroundColor: '#997588',
         width,
         alignItems: 'center',
         justifyContent: 'center',
@@ -46,9 +47,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#271625',
-        width: 250,
-        borderRadius: 100
+        //backgroundColor: '#997588',
+        //backgroundColor: '#f7eee7',
+        backgroundColor: '#d6c1b8',
+        width: 380,
+        height: 70,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
     }
 });
 

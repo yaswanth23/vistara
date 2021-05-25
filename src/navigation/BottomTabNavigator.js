@@ -1,9 +1,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FlightSearchScreen from '../screens/FlightSearchScreen'
-import RegistrationScreen from '../screens/RegistrationScreen';
+import MyProfileScreen from '../screens/MyProfileScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TabBar from '../components/TabBar';
+import CheckinScreen from '../screens/CheckinScreen';
+import MyTripsScreen from '../screens/MyTripsScreen';
 
 function FlightScreen() {
   return (
@@ -11,9 +13,20 @@ function FlightScreen() {
   );
 }
 
-function RegisterScreen() {
+function TripsScreen() {
   return (
-    <RegistrationScreen />
+    <MyTripsScreen />
+  );
+}
+
+function CheckScreen() {
+  return (
+    <CheckinScreen />
+  );
+}
+function ProfileScreen() {
+  return (
+    <MyProfileScreen />
   );
 }
 
@@ -26,12 +39,22 @@ export default function BottomTabNavigator() {
         <Tab.Screen 
           name="Flight"
           component={FlightScreen}
-          initialParams={{icon: 'ios-airplane-outline'}}
+          initialParams={{icon: 'ios-airplane-sharp'}}
+        />
+        <Tab.Screen 
+          name="My Trips"
+          component={TripsScreen}
+          initialParams={{icon: 'ios-briefcase'}}
+        />
+        <Tab.Screen 
+          name="Check-In"
+          component={CheckScreen}
+          initialParams={{icon: 'ios-barcode-outline'}}
         />
         <Tab.Screen 
           name="Profile"
-          component={RegisterScreen}
-          initialParams={{icon: 'ios-person-outline'}}
+          component={ProfileScreen}
+          initialParams={{icon: 'ios-person-sharp'}}
         />
       </Tab.Navigator>
     </NavigationContainer>

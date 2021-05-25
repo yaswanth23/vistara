@@ -18,8 +18,6 @@ const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
 
 const InitialScreen = ({navigation}) =>{
-    const val = screenheight * 0.025;
-    console.log(val);
 
     const [data, setData] = useState({
         password: '',
