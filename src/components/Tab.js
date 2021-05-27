@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = ({color, tab, onPress, icon}) => {
@@ -9,8 +8,8 @@ const Tab = ({color, tab, onPress, icon}) => {
             style={styles.container}
             onPress={onPress}
         >
-            {icon && <Ionicons name={icon} size={20} color={color} /> }
-            <Text style={{color}}>{tab.name}</Text>
+            {icon && <Ionicons name={icon} size={18} color={color} /> }
+            <Text style={{color:color, fontSize: 12}}>{tab.name}</Text>
         </TouchableOpacity>
     );
 };
