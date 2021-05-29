@@ -8,10 +8,8 @@ const FlightSearchScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                
-                    <Text style={styles.headerTextStyle}>Book your</Text>
-                    <Text style={styles.headerTextStyle}>Flight</Text>
-                
+                <Text style={styles.headerTextStyle}>Book your</Text>
+                <Text style={styles.headerTextStyle}>Flight</Text>
             </View>
         </View>
     );
@@ -20,7 +18,9 @@ const FlightSearchScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#997588'
+        backgroundColor: '#997588',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     header: {
 
