@@ -40,7 +40,7 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             if (route.name === 'Flight') {
-              iconName = focused ? 'ios-airplane-sharp' : 'ios-airplane-outline';
+              iconName = focused ? 'ios-airplane-sharp' : 'ios-airplane-sharp';
             } else if (route.name === 'My Trips') {
               iconName = focused ? 'ios-briefcase' : 'ios-briefcase';
             } else if (route.name === 'Check-In') {
@@ -64,3 +64,6 @@ export default function BottomTabNavigator() {
     </NavigationContainer>
   );
 }
+//backgroundColor: '#997588',
+//backgroundColor: '#f7eee7',
+//backgroundColor: '#d6c1b8',
