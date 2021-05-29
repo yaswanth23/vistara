@@ -98,7 +98,7 @@ export default function BottomTabNavigator() {
             }}>
               <Ionicons
                 name="ios-briefcase"
-                size={20}
+                size={19}
                 color={focused ? '#47143d' : '#b3b3b3'}
               />
             </View>

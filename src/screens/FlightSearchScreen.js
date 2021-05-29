@@ -13,7 +13,6 @@ const FlightSearchScreen = () => {
                     <Text style={styles.headerTextStyle}>Flight</Text>
                 
             </View>
-            <View style={styles.footer}></View>
         </View>
     );
 };
@@ -21,13 +20,10 @@ const FlightSearchScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#997588'
     },
     header: {
-        flex: 0.9,
-        backgroundColor: '#47143d'
-    },
-    footer: {
-        flex: 1.5,
+
     },
     headerTextStyle: {
         fontSize: 35,
