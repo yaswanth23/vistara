@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import {View, Text,StyleSheet, Animated, Dimensions} from 'react-native';
+import {StyleSheet, Animated, Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -143,11 +143,11 @@ export default function BottomTabNavigator() {
         position: 'absolute',
         bottom: 54,
         left: 18,
+        borderRadius: 20,
         transform: [
           {translateX: tabOffsetvalue}
         ]
       }}>
-
       </Animated.View>
     </NavigationContainer>
   );
@@ -165,6 +165,3 @@ const styles = StyleSheet.create({
     elevation: 5
   }
 });
-//backgroundColor: '#997588',
-//backgroundColor: '#f7eee7',
-//backgroundColor: '#d6c1b8',

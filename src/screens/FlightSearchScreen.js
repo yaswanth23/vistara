@@ -37,3 +37,7 @@ const styles = StyleSheet.create({
 });
 
 export default FlightSearchScreen;
+
+//backgroundColor: '#997588',
+//backgroundColor: '#f7eee7',
+//backgroundColor: '#d6c1b8',
