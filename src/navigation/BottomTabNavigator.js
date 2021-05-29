@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import {StyleSheet, Animated, Dimensions} from 'react-native';
+import {View, Animated, Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -42,126 +42,131 @@ function getWidth() {
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
-  const tabOffsetvalue = useRef(new Animated.Value(0)).current;
+  const tabOffsetValue = useRef(new Animated.Value(0)).current;
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color }) => {
-            let iconName;
-            if (route.name === 'Flights') {
-              iconName = focused ? 'ios-airplane-sharp' : 'ios-airplane-sharp';
-            } else if (route.name === 'My Trips') {
-              iconName = focused ? 'ios-briefcase' : 'ios-briefcase';
-            } else if (route.name === 'Check-In') {
-              iconName = focused ? 'ios-barcode-outline' : 'ios-barcode-outline';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'ios-person-sharp' : 'ios-person-sharp';
-            }
-            return <Ionicons name={iconName} size={20} color={color} />;
+      <Tab.Navigator tabBarOptions={{
+        style: {
+          backgroundColor: 'white',
+          position: 'absolute',
+          bottom: 0,
+          height: 56,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          shadowColor: '#000',
+          borderTopWidth: 0,
+          shadowOpacity: 0.06,
+          shadowRadius: 3.5,
+          paddingBottom: 10,
+          shadowOffset: {
+            width: 0,
+            height: 5
           },
-        })}
-        tabBarOptions={{
-          activeTintColor: '#47143d',
-          inactiveTintColor: '#b3b3b3',
-          labelStyle: {
-            fontSize: 11
-          },
-          labelStyle: {
-            fontSize: 12,
-            fontWeight: '500'
-          },
-          style: {
-            position: 'absolute',
-            elevation: 0,
-            backgroundColor: '#fff',
-            borderTopRightRadius: 15,
-            borderTopLeftRadius: 15,
-            borderTopWidth: 0,
-            height: 56,
-            alignItems:'center',
-            justifyContent: 'center',
-            paddingTop: 8,
-            paddingBottom: 10,
-            ...styles.shadow
+          paddingHorizontal: 20,
+        },
+        activeTintColor: '#47143d',
+        inactiveTintColor: '#b3b3b3',
+        labelStyle: {
+          fontSize: 11,
+          fontWeight: '500'
+        },
+      }}>
+        <Tab.Screen name={"Flights"} component={FlightScreen} options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              top: 4
+            }}>
+              <Ionicons
+                name="ios-airplane-sharp"
+                size={22}
+                color={focused ? '#47143d' : '#b3b3b3'}
+              />
+            </View>
+          )
+        }} listeners={({ navigation, route }) => ({
+          tabPress: e => {
+            Animated.spring(tabOffsetValue, {
+              toValue: 0,
+              useNativeDriver: true
+            }).start();
           }
-        }}
-      >
-        <Tab.Screen 
-          name="Flights"
-          component={FlightScreen}
-          listeners={({navigation,route}) => ({
-            tabPress: e => {
-              Animated.spring(tabOffsetvalue, {
-                toValue: 0,
-                useNativeDriver: true
-              }).start();
-            }
-          })}
-        />
-        <Tab.Screen 
-          name="My Trips" 
-          component={TripsScreen}
-          listeners={({navigation,route}) => ({
-            tabPress: e => {
-              Animated.spring(tabOffsetvalue, {
-                toValue: getWidth() * 1.5,
-                useNativeDriver: true
-              }).start();
-            }
-          })}
-        />
-        <Tab.Screen 
-          name="Check-In" 
-          component={CheckScreen}
-          listeners={({navigation,route}) => ({
-            tabPress: e => {
-              Animated.spring(tabOffsetvalue, {
-                toValue: getWidth() * 3,
-                useNativeDriver: true
-              }).start();
-            }
-          })}
-        />
-        <Tab.Screen 
-          name="Profile" 
-          component={ProfileScreen}
-          listeners={({navigation,route}) => ({
-            tabPress: e => {
-              Animated.spring(tabOffsetvalue, {
-                toValue: getWidth() * 4.4,
-                useNativeDriver: true
-              }).start();
-            }
-          })}
-        />
+        })}></Tab.Screen>
+        <Tab.Screen name={"My Trips"} component={TripsScreen} options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              top: 4
+            }}>
+              <Ionicons
+                name="ios-briefcase"
+                size={20}
+                color={focused ? '#47143d' : '#b3b3b3'}
+              />
+            </View>
+          )
+        }} listeners={({ navigation, route }) => ({
+          tabPress: e => {
+            Animated.spring(tabOffsetValue, {
+              toValue: getWidth() * 1.35,
+              useNativeDriver: true
+            }).start();
+          }
+        })}></Tab.Screen>
+        <Tab.Screen name={"Check-In"} component={CheckScreen} options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              top: 4
+            }}>
+              <Ionicons
+                name="ios-barcode-outline"
+                size={22}
+                color={focused ? '#47143d' : '#b3b3b3'}
+              />
+            </View>
+          )
+        }} listeners={({ navigation, route }) => ({
+          tabPress: e => {
+            Animated.spring(tabOffsetValue, {
+              toValue: getWidth() * 2.65,
+              useNativeDriver: true
+            }).start();
+          }
+        })}></Tab.Screen>
+        <Tab.Screen name={"Profile"} component={ProfileScreen} options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              top: 4
+            }}>
+              <Ionicons
+                name="ios-person"
+                size={22}
+                color={focused ? '#47143d' : '#b3b3b3'}
+              />
+            </View>
+          )
+        }} listeners={({ navigation, route }) => ({
+          tabPress: e => {
+            Animated.spring(tabOffsetValue, {
+              toValue: getWidth() * 4,
+              useNativeDriver: true
+            }).start();
+          }
+        })}></Tab.Screen>
       </Tab.Navigator>
+
       <Animated.View style={{
-        width: getWidth()-7,
+        width: getWidth() - 10,
         height: 2,
         backgroundColor: '#47143d',
         position: 'absolute',
         bottom: 54,
-        left: 18,
+        left: 35,
         borderRadius: 20,
         transform: [
-          {translateX: tabOffsetvalue}
+          { translateX: tabOffsetValue }
         ]
       }}>
+
       </Animated.View>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.06,
-    shadowRadius: 3.5,
-    elevation: 5
-  }
-});
