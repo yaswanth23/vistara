@@ -41,13 +41,13 @@ function getWidth() {
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabNavigator() {
+export default function SampleTestNavigation() {
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
   return (
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{
         style: {
-          backgroundColor: '#f2f2f2',
+          backgroundColor: 'white',
           position: 'absolute',
           bottom: 0,
           height: 56,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground , StyleSheet, Dimensions} from 'react-native';
+import {View, Text, Image, ImageBackground , StyleSheet, Dimensions} from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -8,8 +8,15 @@ const FlightSearchScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTextStyle}>Book your</Text>
-                <Text style={styles.headerTextStyle}>Flight</Text>
+                
+            </View>
+            <View style={styles.footer}>
+                <View 
+                    style={{ ...StyleSheet.absoluteFillObject, backgroundColor: '#997588'}}
+                />
+                <View style={{flex: 1, backgroundColor: 'white', borderTopLeftRadius: 75}}>
+
+                </View>
             </View>
         </View>
     );
@@ -18,17 +25,20 @@ const FlightSearchScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#997588',
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: 'white'
     },
     header: {
-
+        flex: 0.5,
+        backgroundColor: '#997588',
+        borderBottomRightRadius: 75
     },
-    headerTextStyle: {
-        fontSize: 35,
-        color: '#fff',
-        fontWeight: '700'
+    footer: {
+        flex: 1
+    },
+    imageStyle: {
+        width: 400,
+        height: 100,
+        resizeMode: 'cover'
     }
 });
 
