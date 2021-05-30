@@ -47,7 +47,7 @@ export default function BottomTabNavigator() {
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{
         style: {
-          backgroundColor: '#f2f2f2',
+          backgroundColor: 'white',
           position: 'absolute',
           bottom: 0,
           height: 56,
@@ -161,6 +161,7 @@ export default function BottomTabNavigator() {
         bottom: 54,
         left: 35,
         borderRadius: 20,
+        elevation: 8,
         transform: [
           { translateX: tabOffsetValue }
         ]
