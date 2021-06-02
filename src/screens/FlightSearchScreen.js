@@ -36,7 +36,7 @@ const FlightSearchScreen = () => {
                             width: '100%',
                             height: '100%',
                             overflow: 'hidden',
-                            borderRadius: 20
+                            borderRadius: 20,
                         }}>
                             <View style={{
                                 marginTop: screenheight * 0.05,
