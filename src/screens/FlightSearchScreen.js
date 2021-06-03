@@ -8,69 +8,62 @@ import {
     Dimensions,
     StatusBar
 } from 'react-native';
+import SwitchSelector from "react-native-switch-selector";
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
 
+const tripOptions = [
+    {label: 'One-Way', value: 'oneway'},
+    {label: 'Round Trip', value: 'roundTrip'}
+];
+
 const FlightSearchScreen = () => {
-    const val = screenheight * 0.05;
-    const testw = screenWidth * 0.9;
-    console.log(testw);
+    const val = screenheight * 0.02;
+    const testw = screenWidth * 0.04;
     console.log(val);
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content"/>
             <View style={styles.header}>
                 <View style={{
+                    marginTop: screenheight * 0.05,
+                    marginLeft: screenWidth * 0.04
+                }}>
+                    <Text style={{
+                        fontSize: 35,
+                        fontWeight: '500',
+                        color: 'black'
+                    }}>Travel</Text>
+                    <Text style={{
+                        fontSize: 35,
+                        fontWeight: '500',
+                        color: 'black',
+                        lineHeight: screenheight * 0.049
+                    }}>somewhere new</Text>
+                </View>
+                <View style={{
+                    marginTop: screenheight * 0.02,
+                    width: screenWidth * 0.9,
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
-                    <View style={{
-                        width: screenWidth * 0.9,
-                        height: 200,
-                        backgroundColor: "#47143d",
-                        borderRadius: 20,
-                        marginTop: screenheight * 0.05
-                    }}>
-                        <ImageBackground source={require('../../res/images/main.png')} resizeMode='cover' style={{
-                            width: '100%',
-                            height: '100%',
-                            overflow: 'hidden',
-                            borderRadius: 20,
-                        }}>
-                            <View style={{
-                                marginTop: screenheight * 0.05,
-                                marginLeft: 30
-                            }}>
-                                <Text style={{
-                                    fontSize: 30,
-                                    color: 'white',
-                                    fontWeight: '600'
-                                }}>
-                                    Book your
-                                </Text>
-                                <Text style={{
-                                    fontSize: 30,
-                                    color: 'white',
-                                    fontWeight: '700'
-                                }}>
-                                    Flight
-                                </Text>
-                            </View>
-                        </ImageBackground>
-                    </View>
+                    <SwitchSelector
+                        options={tripOptions}
+                        initial={0}
+                        textColor = 'black'
+                        selectedColor = 'black'
+                        backgroundColor = 'white'
+                        bold
+                        valuePadding = {0.1}
+                        fontSize = {12}
+                        height = {40}
+                        borderRadius = {7}
+                        borderWidth = {10}
+                        style={styles.switchStyle}
+                    />
+
                 </View>
-                <Text style={{
-                    marginTop: screenheight * 0.05,
-                    fontSize: 40,
-                    fontWeight: '800',
-                    color: '#47143D',
-                    }}>
-                        Book your
-                </Text>
-                <Text>
-                    Flight
-                </Text>
             </View>
         </View>
     );
@@ -84,6 +77,10 @@ const styles = StyleSheet.create({
     header: {
         flex: 1,
         backgroundColor: '#f2f2f2'
+    },
+    switchStyle: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
 
