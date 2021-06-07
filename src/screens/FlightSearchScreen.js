@@ -2,8 +2,6 @@ import React from 'react';
 import {
     View,
     Text,
-    Image,
-    ImageBackground,
     StyleSheet,
     Dimensions,
     StatusBar
@@ -43,26 +41,28 @@ const FlightSearchScreen = () => {
                     }}>somewhere new</Text>
                 </View>
                 <View style={{
-                    marginTop: screenheight * 0.02,
-                    width: screenWidth * 0.9,
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    alignItems: 'center'
                 }}>
-                    <SwitchSelector
-                        options={tripOptions}
-                        initial={0}
-                        textColor = 'black'
-                        selectedColor = 'black'
-                        backgroundColor = 'white'
-                        bold
-                        valuePadding = {0.1}
-                        fontSize = {12}
-                        height = {40}
-                        borderRadius = {7}
-                        borderWidth = {10}
-                        style={styles.switchStyle}
-                    />
-
+                    <View style={{
+                        marginTop: screenheight * 0.02,
+                        width: screenWidth * 0.8,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        <SwitchSelector
+                            options={tripOptions}
+                            initial={0}
+                            textColor = 'black'
+                            selectedColor = 'white'
+                            backgroundColor = '#cccccc'
+                            buttonColor = '#47143D'
+                            bold
+                            fontSize = {12.5}
+                            height = {35}
+                            borderRadius = {7}
+                            borderWidth = {10}
+                        />
+                    </View>
                 </View>
             </View>
         </View>
@@ -77,10 +77,6 @@ const styles = StyleSheet.create({
     header: {
         flex: 1,
         backgroundColor: '#f2f2f2'
-    },
-    switchStyle: {
-        justifyContent: 'center',
-        alignItems: 'center'
     }
 });
 
