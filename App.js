@@ -4,13 +4,15 @@ import SplashScreen from './src/screens/SplashScreen';
 import InitialScreen from './src/screens/InitialScreen';
 import RegistrationScreen from './src/screens/RegistrationScreen';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
+import ODpairComponent from './src/components/ODpairComponent';
 
 const navigator = createStackNavigator(
   {
     Splash: SplashScreen,
     Initial: InitialScreen,
     Register: RegistrationScreen,
-    BottomTab: BottomTabNavigator
+    BottomTab: BottomTabNavigator,
+    OdMap: ODpairComponent
   },
   {
     mode: 'modal',

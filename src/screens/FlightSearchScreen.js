@@ -4,9 +4,12 @@ import {
     Text,
     StyleSheet,
     Dimensions,
-    StatusBar
+    StatusBar,
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
 import SwitchSelector from "react-native-switch-selector";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -16,8 +19,8 @@ const tripOptions = [
     {label: 'Round Trip', value: 'roundTrip'}
 ];
 
-const FlightSearchScreen = () => {
-    const val = screenheight * 0.02;
+const FlightSearchScreen = ({navigation}) => {
+    const val = screenheight * 0.03;
     const testw = screenWidth * 0.04;
     console.log(val);
     return (
@@ -54,13 +57,45 @@ const FlightSearchScreen = () => {
                             initial={0}
                             textColor = 'black'
                             selectedColor = 'white'
-                            backgroundColor = '#cccccc'
+                            backgroundColor = '#f2f2f2'
                             buttonColor = '#47143D'
                             bold
                             fontSize = {12.5}
                             height = {35}
                             borderRadius = {7}
                             borderWidth = {10}
+                        />
+                    </View>
+                </View>
+                <View style={{
+                    marginTop: screenheight * 0.03,
+                    alignItems: 'center'
+                }}>
+                    <View style={styles.originText}>
+                        <MaterialCommunityIcons 
+                            name="airplane-takeoff" 
+                            size={22} 
+                            color="black" 
+                        />
+                        <TextInput 
+                            placeholder = "From"
+                            style={styles.textInput}
+                        />
+                    </View>
+                </View>
+                <View style={{
+                    marginTop: screenheight * 0.01,
+                    alignItems: 'center'
+                }}>
+                    <View style={styles.originText}>
+                        <MaterialCommunityIcons 
+                            name="airplane-landing" 
+                            size={22} 
+                            color="black" 
+                        />
+                        <TextInput 
+                            placeholder = "To"
+                            style={styles.textInput}
                         />
                     </View>
                 </View>
@@ -76,7 +111,22 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        backgroundColor: '#f2f2f2'
+        backgroundColor: '#fff'
+    },
+    originText: {
+        flexDirection: 'row',
+        width: screenWidth * 0.9,
+        backgroundColor: '#f2f2f2',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 10
+    },
+    textInput: {
+        flex: 1,
+        paddingLeft: 10,
+        color: 'black',
+        fontSize: 15,
     }
 });
 
