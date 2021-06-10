@@ -6,10 +6,12 @@ import {
     Dimensions,
     StatusBar,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    Button
 } from 'react-native';
 import SwitchSelector from "react-native-switch-selector";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -19,10 +21,12 @@ const tripOptions = [
     {label: 'Round Trip', value: 'roundTrip'}
 ];
 
-const FlightSearchScreen = ({navigation}) => {
+const FlightSearchScreen = () => {
     const val = screenheight * 0.03;
     const testw = screenWidth * 0.04;
     console.log(val);
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content"/>
@@ -67,6 +71,9 @@ const FlightSearchScreen = ({navigation}) => {
                         />
                     </View>
                 </View>
+                <TouchableOpacity
+                    onPress = {() => navigation.navigate()}
+                >
                 <View style={{
                     marginTop: screenheight * 0.03,
                     alignItems: 'center'
@@ -83,6 +90,7 @@ const FlightSearchScreen = ({navigation}) => {
                         />
                     </View>
                 </View>
+                </TouchableOpacity>
                 <View style={{
                     marginTop: screenheight * 0.01,
                     alignItems: 'center'
@@ -99,6 +107,10 @@ const FlightSearchScreen = ({navigation}) => {
                         />
                     </View>
                 </View>
+                <Button
+        title="Go to Settings"
+        onPress={() => navigation.navigate('ODpair')}
+      />
             </View>
         </View>
     );

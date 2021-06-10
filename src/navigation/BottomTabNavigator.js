@@ -1,13 +1,29 @@
 import React, { useRef } from 'react';
 import {View, Animated, Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import 'react-native-gesture-handler';
 import FlightSearchScreen from '../screens/FlightSearchScreen'
 import MyProfileScreen from '../screens/MyProfileScreen';
 import CheckinScreen from '../screens/CheckinScreen';
 import MyTripsScreen from '../screens/MyTripsScreen';
+import ODpairComponent from '../components/ODpairComponent';
+
+const FlightStack = createStackNavigator();
+const route = useRoute;
+function FlightStackScreen() {
+  return (
+    <FlightStack.Navigator 
+      screenOptions={{
+        headerShown: false
+    }}>
+      <FlightStack.Screen name="FlightPage" component={FlightScreen}/>
+      <FlightStack.Screen name="ODpair" component={OdpairScreen}/>
+    </FlightStack.Navigator>
+  );
+}
 
 function FlightScreen() {
   return (
@@ -30,6 +46,12 @@ function CheckScreen() {
 function ProfileScreen() {
   return (
     <MyProfileScreen />
+  );
+}
+
+function OdpairScreen() {
+  return (
+    <ODpairComponent />
   );
 }
 
@@ -71,7 +93,7 @@ export default function BottomTabNavigator() {
           fontWeight: '500'
         },
       }}>
-        <Tab.Screen name={"Flights"} component={FlightScreen} options={{
+        <Tab.Screen name={"Flights"} component={FlightStackScreen} options={{
           tabBarIcon: ({ focused }) => (
             <View style={{
               top: 4
