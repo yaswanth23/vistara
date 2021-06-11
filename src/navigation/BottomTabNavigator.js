@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import {View, Animated, Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer, useRoute } from '@react-navigation/native';
+import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import 'react-native-gesture-handler';
 import FlightSearchScreen from '../screens/FlightSearchScreen'
@@ -12,8 +12,8 @@ import MyTripsScreen from '../screens/MyTripsScreen';
 import ODpairComponent from '../components/ODpairComponent';
 
 const FlightStack = createStackNavigator();
-const route = useRoute;
-function FlightStackScreen() {
+
+function FlightStackScreen({navigation}) {
   return (
     <FlightStack.Navigator 
       screenOptions={{
@@ -93,19 +93,27 @@ export default function BottomTabNavigator() {
           fontWeight: '500'
         },
       }}>
-        <Tab.Screen name={"Flights"} component={FlightStackScreen} options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{
-              top: 4
-            }}>
-              <Ionicons
-                name="ios-airplane-sharp"
-                size={22}
-                color={focused ? '#47143d' : '#b3b3b3'}
-              />
-            </View>
-          )
-        }} listeners={({ navigation, route }) => ({
+        <Tab.Screen name={"Flights"} component={FlightStackScreen} options={({route}) => ({
+          tabBarVisible: ((route) => {
+            const routeName = getFocusedRouteNameFromRoute(route) ?? ""
+            if (routeName === "ODpair") {
+                return false
+            }
+            return true
+        })(route),
+            tabBarIcon: ({ focused }) => (
+              <View style={{
+                top: 4
+              }}>
+                <Ionicons
+                  name="ios-airplane-sharp"
+                  size={22}
+                  color={focused ? '#47143d' : '#b3b3b3'}
+                />
+              </View>
+            )
+        })}
+        listeners={({ navigation, route }) => ({
           tabPress: e => {
             Animated.spring(tabOffsetValue, {
               toValue: 0,
