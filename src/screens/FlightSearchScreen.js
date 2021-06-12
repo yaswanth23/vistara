@@ -5,7 +5,6 @@ import {
     StyleSheet,
     Dimensions,
     StatusBar,
-    TextInput,
     TouchableOpacity,
     Button
 } from 'react-native';
@@ -36,13 +35,13 @@ const FlightSearchScreen = () => {
                     marginLeft: screenWidth * 0.04
                 }}>
                     <Text style={{
-                        fontSize: 35,
-                        fontWeight: '500',
+                        fontSize: 33,
+                        fontWeight: '700',
                         color: 'black'
                     }}>Travel</Text>
                     <Text style={{
-                        fontSize: 35,
-                        fontWeight: '500',
+                        fontSize: 32,
+                        fontWeight: '700',
                         color: 'black',
                         lineHeight: screenheight * 0.049
                     }}>somewhere new</Text>
@@ -72,41 +71,39 @@ const FlightSearchScreen = () => {
                     </View>
                 </View>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate()}
+                    onPress = {() => navigation.navigate('ODpair')}
                 >
-                <View style={{
-                    marginTop: screenheight * 0.03,
-                    alignItems: 'center'
-                }}>
-                    <View style={styles.originText}>
-                        <MaterialCommunityIcons 
-                            name="airplane-takeoff" 
-                            size={22} 
-                            color="black" 
-                        />
-                        <TextInput 
-                            placeholder = "From"
-                            style={styles.textInput}
-                        />
+                    <View style={{
+                        marginTop: screenheight * 0.03,
+                        alignItems: 'center'
+                    }}>
+                        <View style={styles.originText}>
+                            <MaterialCommunityIcons 
+                                name="airplane-takeoff" 
+                                size={22} 
+                                color="black" 
+                            />
+                            <Text style={styles.textInput}>From</Text>
                     </View>
                 </View>
                 </TouchableOpacity>
-                <View style={{
-                    marginTop: screenheight * 0.01,
-                    alignItems: 'center'
-                }}>
-                    <View style={styles.originText}>
-                        <MaterialCommunityIcons 
-                            name="airplane-landing" 
-                            size={22} 
-                            color="black" 
-                        />
-                        <TextInput 
-                            placeholder = "To"
-                            style={styles.textInput}
-                        />
+                <TouchableOpacity
+                    onPress = {() => navigation.navigate('ODpair')}
+                >
+                    <View style={{
+                        marginTop: screenheight * 0.01,
+                        alignItems: 'center'
+                    }}>
+                        <View style={styles.originText}>
+                            <MaterialCommunityIcons 
+                                name="airplane-landing" 
+                                size={22} 
+                                color="black" 
+                            />
+                            <Text style={styles.textInput}>To</Text>
+                        </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                 <Button
         title="Go to Settings"
         onPress={() => navigation.navigate('ODpair')}
@@ -123,21 +120,19 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: '#e6e6e6'
     },
     originText: {
         flexDirection: 'row',
         width: screenWidth * 0.9,
-        backgroundColor: '#f2f2f2',
-        justifyContent: 'center',
+        backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
         borderRadius: 10
     },
     textInput: {
-        flex: 1,
         paddingLeft: 10,
-        color: 'black',
+        color: '#999999',
         fontSize: 15,
     }
 });
