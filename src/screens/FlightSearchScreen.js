@@ -21,17 +21,17 @@ const screenheight = Dimensions.get('window').height;
 // ];
 
 const FlightSearchScreen = () => {
-    const val = screenheight * 0.075;
+    const val = screenheight * 0.05;
     const testw = screenWidth * 0.04;
     console.log(val);
     const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyle="dark-content"/>
+            <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" translucent={false}/>
             <View style={styles.header}>
                 <View style={{
-                    marginTop: screenheight * 0.05,
+                    marginTop: 33,
                     marginLeft: screenWidth * 0.04
                 }}>
                     <Text style={{
@@ -43,7 +43,7 @@ const FlightSearchScreen = () => {
                         fontSize: 32,
                         fontWeight: '700',
                         color: 'black',
-                        lineHeight: screenheight * 0.049
+                        lineHeight: 32
                     }}>somewhere new</Text>
                 </View>
                 {/* <View style={{
@@ -74,7 +74,7 @@ const FlightSearchScreen = () => {
                     onPress = {() => navigation.navigate('ODpair')}
                 >
                     <View style={{
-                        marginTop: screenheight * 0.03,
+                        marginTop: 20,
                         alignItems: 'center'
                     }}>
                         <View style={styles.originTextFrom}>
@@ -103,10 +103,7 @@ const FlightSearchScreen = () => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <Button
-        title="Go to Settings"
-        onPress={() => navigation.navigate('ODpair')}
-      />
+                
             </View>
         </View>
     );
@@ -124,7 +121,7 @@ const styles = StyleSheet.create({
     originTextFrom: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
-        height: screenheight * 0.075,
+        height: 46,
         backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
@@ -136,7 +133,7 @@ const styles = StyleSheet.create({
     originTextTo: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
-        height: screenheight * 0.075,
+        height: 46,
         backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
@@ -146,7 +143,7 @@ const styles = StyleSheet.create({
     textInput: {
         paddingLeft: 10,
         color: '#999999',
-        fontSize: 15,
+        fontSize: 14,
     }
 });
 
