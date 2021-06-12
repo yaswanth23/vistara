@@ -8,20 +8,20 @@ import {
     TouchableOpacity,
     Button
 } from 'react-native';
-import SwitchSelector from "react-native-switch-selector";
+//import SwitchSelector from "react-native-switch-selector";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
 
-const tripOptions = [
-    {label: 'One-Way', value: 'oneway'},
-    {label: 'Round Trip', value: 'roundTrip'}
-];
+// const tripOptions = [
+//     {label: 'One-Way', value: 'oneway'},
+//     {label: 'Round Trip', value: 'roundTrip'}
+// ];
 
 const FlightSearchScreen = () => {
-    const val = screenheight * 0.03;
+    const val = screenheight * 0.075;
     const testw = screenWidth * 0.04;
     console.log(val);
     const navigation = useNavigation();
@@ -46,7 +46,7 @@ const FlightSearchScreen = () => {
                         lineHeight: screenheight * 0.049
                     }}>somewhere new</Text>
                 </View>
-                <View style={{
+                {/* <View style={{
                     alignItems: 'center'
                 }}>
                     <View style={{
@@ -69,7 +69,7 @@ const FlightSearchScreen = () => {
                             borderWidth = {10}
                         />
                     </View>
-                </View>
+                </View> */}
                 <TouchableOpacity
                     onPress = {() => navigation.navigate('ODpair')}
                 >
@@ -77,7 +77,7 @@ const FlightSearchScreen = () => {
                         marginTop: screenheight * 0.03,
                         alignItems: 'center'
                     }}>
-                        <View style={styles.originText}>
+                        <View style={styles.originTextFrom}>
                             <MaterialCommunityIcons 
                                 name="airplane-takeoff" 
                                 size={22} 
@@ -91,10 +91,9 @@ const FlightSearchScreen = () => {
                     onPress = {() => navigation.navigate('ODpair')}
                 >
                     <View style={{
-                        marginTop: screenheight * 0.01,
                         alignItems: 'center'
                     }}>
-                        <View style={styles.originText}>
+                        <View style={styles.originTextTo}>
                             <MaterialCommunityIcons 
                                 name="airplane-landing" 
                                 size={22} 
@@ -120,15 +119,29 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        backgroundColor: '#e6e6e6'
+        backgroundColor: '#f9ebf7'
     },
-    originText: {
+    originTextFrom: {
         flexDirection: 'row',
-        width: screenWidth * 0.9,
+        width: screenWidth * 0.85,
+        height: screenheight * 0.075,
         backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
-        borderRadius: 10
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderBottomColor: '#e6e6e6',
+        borderBottomWidth: 1
+    },
+    originTextTo: {
+        flexDirection: 'row',
+        width: screenWidth * 0.85,
+        height: screenheight * 0.075,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        padding: 10,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
     },
     textInput: {
         paddingLeft: 10,
