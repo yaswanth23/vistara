@@ -158,6 +158,7 @@ const InitialScreen = ({navigation}) =>{
                         marginTop: screenheight * 0.05
                     }}>
                         <TouchableOpacity
+                            activeOpacity={0.5}
                             onPress={() => navigation.navigate('BottomTab')}
                         >
                             <Text style={{
