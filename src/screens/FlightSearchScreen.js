@@ -11,6 +11,7 @@ import {
 //import SwitchSelector from "react-native-switch-selector";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -23,7 +24,7 @@ const screenheight = Dimensions.get('window').height;
 const FlightSearchScreen = () => {
     const val = screenheight * 0.05;
     const testw = screenWidth * 0.04;
-    console.log(val);
+    console.log("=== H ==> "+val);
     const navigation = useNavigation();
 
     return (
@@ -104,7 +105,33 @@ const FlightSearchScreen = () => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                
+                <View style={{
+                    alignItems: 'center'
+                }}>
+                    <TouchableOpacity
+                        activeOpacity={0.8}
+                        onPress={() => navigation.navigate('ODpair')}
+                    >
+                        <View style={styles.searchButton}>
+                            <Text style={{
+                                color:'#fff',
+                                fontSize: 16,
+                                fontWeight: '500',
+                                right: 80
+                            }}>
+                                Search
+                            </Text>
+                            <Feather 
+                                name="chevrons-right" 
+                                size={22} 
+                                color="white" 
+                                style={{
+                                    left: 80
+                                }}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     );
@@ -145,7 +172,17 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         color: '#999999',
         fontSize: 14,
-    }
+    },
+    searchButton: {
+        marginTop: 20,
+        flexDirection: 'row',
+        width: screenWidth * 0.8,
+        height: 45,
+        backgroundColor: '#271625',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
 });
 
 export default FlightSearchScreen;
