@@ -108,7 +108,7 @@ const InitialScreen = ({navigation}) =>{
                         </Text>
                     </View>
                     <TouchableOpacity
-                        activeOpacity={0.5}
+                        activeOpacity={0.8}
                         onPress={() => navigation.navigate('BottomTab')}
                     >
                         <View style={styles.logInButton}>
@@ -141,7 +141,7 @@ const InitialScreen = ({navigation}) =>{
                         </Text>
                         <Text> </Text>
                         <TouchableOpacity
-                            activeOpacity={0.5}
+                            activeOpacity={0.7}
                             onPress={() => navigation.navigate('Register')}
                         >
                             <Text style={{
@@ -158,7 +158,7 @@ const InitialScreen = ({navigation}) =>{
                         marginTop: screenheight * 0.05
                     }}>
                         <TouchableOpacity
-                            activeOpacity={0.5}
+                            activeOpacity={0.7}
                             onPress={() => navigation.navigate('BottomTab')}
                         >
                             <Text style={{
