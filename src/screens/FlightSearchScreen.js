@@ -109,7 +109,7 @@ const FlightSearchScreen = () => {
                     alignItems: 'center'
                 }}>
                     <TouchableOpacity
-                        activeOpacity={0.8}
+                        activeOpacity={0.9}
                         onPress={() => navigation.navigate('FltSearch')}
                     >
                         <View style={styles.searchButton}>
