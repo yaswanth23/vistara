@@ -5,11 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import 'react-native-gesture-handler';
+
 import FlightSearchScreen from '../screens/FlightSearchScreen'
 import MyProfileScreen from '../screens/MyProfileScreen';
 import CheckinScreen from '../screens/CheckinScreen';
 import MyTripsScreen from '../screens/MyTripsScreen';
 import ODpairComponent from '../components/ODpairComponent';
+import FltSearchScreen from '../screens/FltSearchScreen';
 
 const FlightStack = createStackNavigator();
 
@@ -21,6 +23,7 @@ function FlightStackScreen({navigation}) {
     }}>
       <FlightStack.Screen name="FlightPage" component={FlightScreen}/>
       <FlightStack.Screen name="ODpair" component={OdpairScreen}/>
+      <FlightStack.Screen name="FltSearch" component={FltScreen}/>
     </FlightStack.Navigator>
   );
 }
@@ -52,6 +55,12 @@ function ProfileScreen() {
 function OdpairScreen() {
   return (
     <ODpairComponent />
+  );
+}
+
+function FltScreen() {
+  return(
+    <FltSearchScreen />
   );
 }
 
@@ -96,7 +105,7 @@ export default function BottomTabNavigator() {
         <Tab.Screen name={"Flights"} component={FlightStackScreen} options={({route}) => ({
           tabBarVisible: ((route) => {
             const routeName = getFocusedRouteNameFromRoute(route) ?? ""
-            if (routeName === "ODpair") {
+            if (routeName === "ODpair" || routeName === "FltSearch") {
                 return false
             }
             return true
