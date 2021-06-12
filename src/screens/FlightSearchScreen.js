@@ -90,6 +90,7 @@ const FlightSearchScreen = () => {
                 </View>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    activeOpacity={1}
                     onPress = {() => navigation.navigate('ODpair')}
                 >
                     <View style={{
