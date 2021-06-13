@@ -12,6 +12,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -26,7 +27,7 @@ const FlightSearchScreen = () => {
     const testw = screenWidth * 0.04;
     console.log("=== H ==> "+val);
     const navigation = useNavigation();
-
+    
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" translucent={false}/>
@@ -111,7 +112,10 @@ const FlightSearchScreen = () => {
                 }}>
                     <TouchableOpacity
                         activeOpacity={0.9}
-                        onPress={() => navigation.navigate('FltSearch')}
+                        onPress={() => {
+                            navigation.navigate('FltSearch');
+                            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        }}
                     >
                         <View style={styles.searchButton}>
                             <Text style={{

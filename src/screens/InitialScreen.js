@@ -13,6 +13,7 @@ import { Video } from 'expo-av';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Haptics from 'expo-haptics';
 
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
@@ -109,7 +110,10 @@ const InitialScreen = ({navigation}) =>{
                     </View>
                     <TouchableOpacity
                         activeOpacity={0.8}
-                        onPress={() => navigation.navigate('BottomTab')}
+                        onPress={() => {
+                            navigation.navigate('BottomTab');
+                            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        }}
                     >
                         <View style={styles.logInButton}>
                             <LinearGradient
@@ -142,7 +146,10 @@ const InitialScreen = ({navigation}) =>{
                         <Text> </Text>
                         <TouchableOpacity
                             activeOpacity={0.7}
-                            onPress={() => navigation.navigate('Register')}
+                            onPress={() => {
+                                navigation.navigate('Register');
+                                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                            }}
                         >
                             <Text style={{
                                 color: '#b99750',
@@ -159,7 +166,10 @@ const InitialScreen = ({navigation}) =>{
                     }}>
                         <TouchableOpacity
                             activeOpacity={0.7}
-                            onPress={() => navigation.navigate('BottomTab')}
+                            onPress={() => {
+                                navigation.navigate('BottomTab');
+                                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                            }}
                         >
                             <Text style={{
                                 color: '#b99750',
