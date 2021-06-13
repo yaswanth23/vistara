@@ -19,7 +19,7 @@ const PopularComponent = ({cityData, onPress}) => {
                 height: 250,
                 width: 250,
                 marginTop: 10,
-                marginRight: 20,
+                marginRight: 15,
                 borderRadius: 10,
                 marginLeft: screenWidth * 0.05
             }}
