@@ -12,8 +12,12 @@ import CheckinScreen from '../screens/CheckinScreen';
 import MyTripsScreen from '../screens/MyTripsScreen';
 import ODpairComponent from '../components/ODpairComponent';
 import FltSearchScreen from '../screens/FltSearchScreen';
-import PopularInfoScreen from '../screens/PopularInfoScreen';
 import PopularComponent from '../components/PopularComponent';
+import Dubai from '../countryScreens/Dubai';
+import Japan from '../countryScreens/Japan';
+import London from '../countryScreens/London';
+import Maldives from '../countryScreens/Maldives';
+import Singapore from '../countryScreens/Singapore';
 
 const FlightStack = createStackNavigator();
 
@@ -26,8 +30,12 @@ function FlightStackScreen({navigation}) {
       <FlightStack.Screen name="FlightPage" component={FlightScreen}/>
       <FlightStack.Screen name="ODpair" component={OdpairScreen}/>
       <FlightStack.Screen name="FltSearch" component={FltScreen}/>
-      <FlightStack.Screen name="InfoPage" component={InfoScreen}/>
       <FlightStack.Screen name="PopPage" component={PopScreen}/>
+      <FlightStack.Screen name="DubScreen" component={DubaiScreen}/>
+      <FlightStack.Screen name="JapScreen" component={JapanScreen}/>
+      <FlightStack.Screen name="LonScreen" component={LondonScreen}/>
+      <FlightStack.Screen name="MalScreen" component={MaldivesScreen}/>
+      <FlightStack.Screen name="SinScreen" component={SingaporeScreen}/>
     </FlightStack.Navigator>
   );
 }
@@ -68,16 +76,40 @@ function FltScreen() {
   );
 }
 
-function InfoScreen() {
-  return(
-    <PopularInfoScreen />
-  );
-}
-
 function PopScreen() {
   return(
     <PopularComponent />
-  )
+  );
+}
+
+function DubaiScreen(){
+  return(
+    <Dubai />
+  );
+}
+
+function JapanScreen(){
+  return(
+    <Japan />
+  );
+}
+
+function LondonScreen(){
+  return(
+    <London />
+  );
+}
+
+function MaldivesScreen(){
+  return(
+    <Maldives />
+  );
+}
+
+function SingaporeScreen(){
+  return(
+    <Singapore />
+  );
 }
 
 function getWidth() {
@@ -123,7 +155,8 @@ export default function BottomTabNavigator() {
         <Tab.Screen name={"Flights"} component={FlightStackScreen} options={({route}) => ({
           tabBarVisible: ((route) => {
             const routeName = getFocusedRouteNameFromRoute(route) ?? ""
-            if (routeName === "ODpair" || routeName === "FltSearch") {
+            if (routeName === "ODpair" || routeName === "FltSearch" || routeName === "SinScreen" || routeName === "LonScreen" ||
+                routeName === "DubScreen" || routeName === "MalScreen" || routeName === "JapScreen") {
                 return false
             }
             return true

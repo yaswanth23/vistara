@@ -3,7 +3,7 @@ import images from './DestinationImageData'
 const trendingDestinations = [
     {
         id: "one",
-        name: "Singapore",
+        screenName: "SinScreen",
         image: images.Singapore1,
         placeName: "Marina Bay Sands",
         location: "Singapore",
@@ -28,7 +28,7 @@ const trendingDestinations = [
     },
     {
         id: "two",
-        name: "Maldives",
+        screenName: "MalScreen",
         image: images.Male3,
         placeName: "Fuvahmulah",
         location: "Malé, Maldives",
@@ -53,7 +53,7 @@ const trendingDestinations = [
     },
     {
         id: "three",
-        name: "Dubai",
+        screenName: "DubScreen",
         image: images.Dubai1,
         placeName: "The Burj Khalifa",
         location: "Dubai",
@@ -78,7 +78,7 @@ const trendingDestinations = [
     },
     {
         id: "four",
-        name: "London",
+        screenName: "LonScreen",
         image: images.London1,
         placeName: "Tower Bridge",
         location: "London, United Kingdom",
@@ -103,7 +103,7 @@ const trendingDestinations = [
     },
     {
         id: "five",
-        name: "Japan",
+        screenName: "JapScreen",
         image: images.Japan1,
         placeName: "Tokyo Tower",
         location: "Tokyo, Japan",
