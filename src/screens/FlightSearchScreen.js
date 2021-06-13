@@ -189,6 +189,7 @@ const FlightSearchScreen = () => {
                                     return(
                                         <PopularComponent 
                                             cityData={item}
+                                            onPress={() => navigation.navigate('InfoPage', {info: item})}
                                         />
                                     );
                                 }}

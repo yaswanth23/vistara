@@ -12,6 +12,8 @@ import CheckinScreen from '../screens/CheckinScreen';
 import MyTripsScreen from '../screens/MyTripsScreen';
 import ODpairComponent from '../components/ODpairComponent';
 import FltSearchScreen from '../screens/FltSearchScreen';
+import PopularInfoScreen from '../screens/PopularInfoScreen';
+import PopularComponent from '../components/PopularComponent';
 
 const FlightStack = createStackNavigator();
 
@@ -24,6 +26,8 @@ function FlightStackScreen({navigation}) {
       <FlightStack.Screen name="FlightPage" component={FlightScreen}/>
       <FlightStack.Screen name="ODpair" component={OdpairScreen}/>
       <FlightStack.Screen name="FltSearch" component={FltScreen}/>
+      <FlightStack.Screen name="InfoPage" component={InfoScreen}/>
+      <FlightStack.Screen name="PopPage" component={PopScreen}/>
     </FlightStack.Navigator>
   );
 }
@@ -62,6 +66,18 @@ function FltScreen() {
   return(
     <FltSearchScreen />
   );
+}
+
+function InfoScreen() {
+  return(
+    <PopularInfoScreen />
+  );
+}
+
+function PopScreen() {
+  return(
+    <PopularComponent />
+  )
 }
 
 function getWidth() {
