@@ -149,6 +149,17 @@ const FlightSearchScreen = () => {
                         </View>
                     </TouchableOpacity>
                 </View>
+                <View style={{
+                    marginTop: 30
+                }}>
+                    <View style={{}}>
+                        <Text style={{
+                            marginLeft: screenWidth * 0.05,
+                            fontSize: 14,
+                            fontWeight: 'bold'
+                        }}>Popular Destinations</Text>
+                    </View>
+                </View>
             </View>
         </View>
     );
@@ -189,6 +200,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         color: '#999999',
         fontSize: 14,
+        fontWeight: '500'
     },
     searchButton: {
         marginTop: 18,
