@@ -5,46 +5,36 @@ const trendingDestinations = [
         id: "one",
         name: "Singapore",
         image: images.Singapore1,
-        duration: "30 mins",
-        serving: 1,
-        isBookmark: false,
-        category: "Pasta"
+        placeName: "Marina Bay Sands",
+        location: "Singapore"
     },
     {
         id: "two",
         name: "Maldives",
-        image: images.Male1,
-        duration: "50 mins",
-        serving: 10,
-        isBookmark: true,
-        category: "Local"
+        image: images.Male3,
+        placeName: "Fuvahmulah",
+        location: "Malé, Maldives"
     },
     {
         id: "three",
         name: "Dubai",
         image: images.Dubai1,
-        duration: "30 mins",
-        serving: 1,
-        isBookmark: true,
-        category: "Local"
+        placeName: "The Burj Khalifa",
+        location: "Dubai"
     },
     {
         id: "four",
         name: "London",
         image: images.London1,
-        duration: "1 hour",
-        serving: 10,
-        isBookmark: true,
-        category: "Local"
+        placeName: "Tower Bridge",
+        location: "London, United Kingdom"
     },
     {
         id: "five",
         name: "Japan",
         image: images.Japan1,
-        duration: "1 hour",
-        serving: 10,
-        isBookmark: true,
-        category: "Local"
+        placeName: "Tokyo Tower",
+        location: "Tokyo, Japan"
     },
 ]
 
