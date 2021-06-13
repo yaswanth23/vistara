@@ -43,7 +43,7 @@ const PopularComponent = ({cityData, onPress}) => {
             }}>
                 <Text style={{
                     color: '#fff',
-                    fontSize: 30,
+                    fontSize: 25,
                     fontWeight: '600'
                 }}>
                     {cityData.placeName}
