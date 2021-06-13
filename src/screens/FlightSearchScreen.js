@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
     View,
     Text,
@@ -27,11 +27,9 @@ console.log(trendingDestinations);
 // ];
 
 const FlightSearchScreen = () => {
-    const val = screenheight * 0.05;
-    const testw = screenWidth * 0.05;
-    console.log("=== W ==> "+testw);
+    const val = screenWidth * 0.05;
+    console.log("=== W ==> "+val);
     const navigation = useNavigation();
-    const scrollViewRef = useRef();
     
     return (
         <ScrollView 
