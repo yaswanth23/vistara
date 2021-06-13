@@ -24,8 +24,8 @@ const screenheight = Dimensions.get('window').height;
 
 const FlightSearchScreen = () => {
     const val = screenheight * 0.05;
-    const testw = screenWidth * 0.04;
-    console.log("=== H ==> "+val);
+    const testw = screenWidth * 0.05;
+    console.log("=== W ==> "+testw);
     const navigation = useNavigation();
     
     return (
@@ -33,20 +33,32 @@ const FlightSearchScreen = () => {
             <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" translucent={false}/>
             <View style={styles.header}>
                 <View style={{
-                    marginTop: 33,
-                    marginLeft: screenWidth * 0.04
+                    marginTop: 25,
+                    marginLeft: screenWidth * 0.05
                 }}>
                     <Text style={{
-                        fontSize: 33,
+                        fontSize: 38,
                         fontWeight: '700',
                         color: 'black'
                     }}>Travel</Text>
                     <Text style={{
-                        fontSize: 32,
-                        fontWeight: '700',
+                        fontSize: 35,
+                        fontWeight: 'bold',
                         color: 'black',
-                        lineHeight: 32
+                        lineHeight: 36
                     }}>somewhere new</Text>
+                </View>
+                <View style={{
+                    marginTop: 10,
+                    marginLeft: screenWidth * 0.05
+                }}>
+                    <Text style={{
+                        color: '#cccccc',
+                        fontSize: 15,
+                        fontWeight: '500'
+                    }}>
+                        Where would you want to go?
+                    </Text>
                 </View>
                 {/* <View style={{
                     alignItems: 'center'
@@ -77,7 +89,7 @@ const FlightSearchScreen = () => {
                     onPress = {() => navigation.navigate('ODpair')}
                 >
                     <View style={{
-                        marginTop: 20,
+                        marginTop: 25,
                         alignItems: 'center'
                     }}>
                         <View style={styles.originTextFrom}>
@@ -154,7 +166,7 @@ const styles = StyleSheet.create({
     originTextFrom: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
-        height: 46,
+        height: 48,
         backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
@@ -166,7 +178,7 @@ const styles = StyleSheet.create({
     originTextTo: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
-        height: 46,
+        height: 48,
         backgroundColor: '#fff',
         alignItems: 'center',
         padding: 10,
@@ -179,7 +191,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     searchButton: {
-        marginTop: 20,
+        marginTop: 18,
         flexDirection: 'row',
         width: screenWidth * 0.8,
         height: 45,
