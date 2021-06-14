@@ -9,21 +9,37 @@ import {
     Animated,
     Platform
 } from 'react-native';
-import { BlurView, VibrancyView } from "@react-native-community/blur";
-import  trendingDestinations  from "../constants/PopularDestinationData";
+import { BlurView } from 'expo-blur';
+import  singaporeData  from "../constants/SingaporeData";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import { SliderBox } from "react-native-image-slider-box";
 
 const HEADER_HEIGHT = 350;
+const screenWidth = Dimensions.get('window').width;
+
+const LocationCardDetail = () => {
+    return(
+        <View></View>
+    )
+}
+
+const LocationCardInfo = () => {
+    return(
+        <BlurView
+            tint='dark'
+            style={{
+                flex: 1,
+            }}
+        >
+            <LocationCardDetail />
+        </BlurView>
+    )
+}
 
 const Singapore = () => {
-    const [selectedInfo, setSelectedInfo] = React.useState(null);
     const navigation = useNavigation();
-
-    React.useEffect(() => {
-        setSelectedInfo(trendingDestinations)
-    },[])
     const scrollY = useRef(new Animated.Value(0)).current;
 
     function renderHeaderBar(){
@@ -72,8 +88,60 @@ const Singapore = () => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                     }}
                 >
-                    <Ionicons name="ios-share-social-outline" size={22} color="black" />
+                    <Ionicons name="ios-share-social-outline" size={24} color="white" />
                 </TouchableOpacity>
+            </View>
+        )
+    }
+
+    function renderHeaderInfoSection(){
+        return(
+            <View
+                style={{
+                    marginTop: -1000,
+                    paddingTop: 1000,
+                    alignItems:'center',
+                    overflow: 'hidden',
+                    backgroundColor: '#f9ebf7',
+                    borderBottomRightRadius: 20,
+                    borderBottomLeftRadius: 20
+                }}
+            >
+                <Animated.Image 
+                    source={require('../../res/images/singapore1.jpg')}
+                    resizeMode="contain"
+                    style={{
+                        height: HEADER_HEIGHT,
+                        width: '200%',
+                        transform: [
+                            {
+                                translateY: scrollY.interpolate({
+                                    inputRange: [-HEADER_HEIGHT, 0, HEADER_HEIGHT],
+                                    outputRange: [-HEADER_HEIGHT / 2, 0, HEADER_HEIGHT * 0.75]
+                                })
+                            },
+                            {
+                                scale: scrollY.interpolate({
+                                    inputRange: [-HEADER_HEIGHT, 0, HEADER_HEIGHT],
+                                    outputRange: [2, 1, 0.75]
+                                })
+                            }
+                        ]
+                    }}
+                />
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        bottom: 10,
+                        left: 30,
+                        right: 30,
+                        height: 80,
+                        borderRadius: 10,
+                        overflow: 'hidden',
+                    }}
+                >
+                    <LocationCardInfo />
+                </Animated.View>
             </View>
         )
     }
@@ -81,19 +149,26 @@ const Singapore = () => {
     return(
         <View style={styles.container}>
             <Animated.FlatList 
-                data={selectedInfo?.places}
+                data={singaporeData}
                 keyExtractor={item => `${item.id}`}
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
-                    <View></View>
+                    <View>
+                        {renderHeaderInfoSection()}
+                    </View>
                 }
                 scrollEventThrottle={16}
                 onScroll={Animated.event([
                     { nativeEvent: { contentOffset: { y: scrollY } } }
                 ],{ useNativeDriver: true })}
                 renderItem={({item}) => (
-                    <View>
-                        <Text>{item.id}</Text>
+                    <View 
+                        style={{
+                            flexDirection: 'row',
+
+                        }}
+                    >
+                        <Text>{item.placeName}</Text>
                     </View>
                 )}
             />

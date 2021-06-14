@@ -25,6 +25,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-haptic-feedback": "^1.11.0",
+    "react-native-image-slider-box": "^1.0.12",
     "react-native-reanimated": "~2.1.0",
     "react-native-router-flux": "^4.3.1",
     "react-native-safe-area-context": "3.2.0",
@@ -33,7 +34,8 @@
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.16.3",
     "react-navigation": "^4.4.4",
-    "react-navigation-stack": "^2.10.4"
+    "react-navigation-stack": "^2.10.4",
+    "expo-blur": "~9.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3"
