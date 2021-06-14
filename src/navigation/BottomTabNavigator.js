@@ -122,8 +122,7 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
-  const [opa, setOpa] = useState(1);
-  console.log("--opa---"+opa);
+
   return (
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{
