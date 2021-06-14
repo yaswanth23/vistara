@@ -20,7 +20,6 @@ import PopularComponent from "../components/PopularComponent";
 const screenWidth = Dimensions.get('window').width;
 const screenheight = Dimensions.get('window').height;
 
-console.log(trendingDestinations);
 // const tripOptions = [
 //     {label: 'One-Way', value: 'oneway'},
 //     {label: 'Round Trip', value: 'roundTrip'}
