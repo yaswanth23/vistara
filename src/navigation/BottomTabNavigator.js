@@ -23,7 +23,7 @@ const FlightStack = createStackNavigator();
 
 function FlightStackScreen({navigation}) {
   return (
-    <FlightStack.Navigator 
+    <FlightStack.Navigator
       screenOptions={{
         headerShown: false
     }}>
@@ -132,10 +132,10 @@ export default function BottomTabNavigator() {
           position: 'absolute',
           bottom: 0,
           height: 56,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
+          //borderTopLeftRadius: 20,
+          //borderTopRightRadius: 20,
           shadowColor: '#000',
-          borderTopWidth: 0,
+          //borderTopWidth: 0,
           shadowOpacity: 0.06,
           shadowRadius: 3.5,
           paddingBottom: 10,
@@ -251,7 +251,7 @@ export default function BottomTabNavigator() {
         bottom: 54,
         left: 35,
         borderRadius: 20,
-        opacity: opa,
+        opacity: 0,
         elevation: 8,
         transform: [
           { translateX: tabOffsetValue }

@@ -30,7 +30,7 @@ const FlightSearchScreen = () => {
     const val = screenWidth * 0.05;
     console.log("=== W ==> "+val);
     const navigation = useNavigation();
-    
+
     return (
         <ScrollView 
             showsVerticalScrollIndicator={false}
@@ -40,7 +40,7 @@ const FlightSearchScreen = () => {
             }}
         >
             <View style={styles.container}>
-                <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" translucent={false}/>
+                <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" />
                 <View style={styles.header}>
                     <View style={{
                         marginTop: 25,
