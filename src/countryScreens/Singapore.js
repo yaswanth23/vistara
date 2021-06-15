@@ -10,7 +10,7 @@ import {
     Platform
 } from 'react-native';
 import { BlurView } from 'expo-blur';
-import  singaporeData  from "../constants/SingaporeData";
+import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -149,7 +149,7 @@ const Singapore = () => {
     return(
         <View style={styles.container}>
             <Animated.FlatList 
-                data={singaporeData}
+                data={sectionData}
                 keyExtractor={item => `${item.id}`}
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
