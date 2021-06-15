@@ -142,7 +142,7 @@ export default function BottomTabNavigator() {
             width: 0,
             height: 5
           },
-          paddingHorizontal: 20,
+          paddingHorizontal: 10,
         },
         activeTintColor: '#47143d',
         inactiveTintColor: '#b3b3b3',

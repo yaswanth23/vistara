@@ -34,7 +34,7 @@ const FlightSearchScreen = () => {
         <ScrollView 
             showsVerticalScrollIndicator={false}
             style={{
-                backgroundColor: '#f9ebf7',
+                backgroundColor: '#fff',
                 flex: 1
             }}
         >
@@ -205,29 +205,29 @@ const FlightSearchScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f9ebf7',
+        backgroundColor: '#fff',
     },
     header: {
         flex: 1,
-        backgroundColor: '#f9ebf7'
+        backgroundColor: '#fff'
     },
     originTextFrom: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
         height: 48,
-        backgroundColor: '#fff',
+        backgroundColor: '#e6e6e6',
         alignItems: 'center',
         padding: 10,
         borderTopRightRadius: 10,
         borderTopLeftRadius: 10,
-        borderBottomColor: '#e6e6e6',
+        borderBottomColor: '#a6a6a6',
         borderBottomWidth: 1
     },
     originTextTo: {
         flexDirection: 'row',
         width: screenWidth * 0.85,
         height: 48,
-        backgroundColor: '#fff',
+        backgroundColor: '#e6e6e6',
         alignItems: 'center',
         padding: 10,
         borderBottomLeftRadius: 10,
