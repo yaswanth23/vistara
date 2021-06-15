@@ -180,6 +180,13 @@ const InitialScreen = ({navigation}) =>{
                             </Text>
                         </TouchableOpacity>
                     </View>
+                    <View style={{
+                        position: 'absolute',
+                        bottom: -116,
+                        marginLeft: -55
+                    }}>
+                        <Image style={styles.tinyLogo} source={require('../../res/images/UK.png')}/>
+                    </View>
                 </View>
             </View>
             {/* <View style={styles.footer}>
@@ -195,9 +202,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#271625'
     },
     tinyLogo: {
-        width: screenheight * 0.135,
-        height: screenheight * 0.135,
-        marginTop: screenheight * 0.09
+        width: 160,
+        height: 160,
     },
     nameLogoStyle: {
         width: screenheight * 0.209,
