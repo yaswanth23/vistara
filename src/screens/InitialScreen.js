@@ -182,8 +182,8 @@ const InitialScreen = ({navigation}) =>{
                     </View>
                     <View style={{
                         position: 'absolute',
-                        bottom: -120,
-                        marginLeft: -60
+                        bottom: -130,
+                        marginLeft: -65
                     }}>
                         <Image style={styles.tinyLogo} source={require('../../res/images/UK.png')}/>
                     </View>
