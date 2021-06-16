@@ -180,13 +180,13 @@ const InitialScreen = ({navigation}) =>{
                             </Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{
+                    {/* <View style={{
                         position: 'absolute',
                         bottom: -130,
                         marginLeft: -65
                     }}>
                         <Image style={styles.tinyLogo} source={require('../../res/images/UK.png')}/>
-                    </View>
+                    </View> */}
                 </View>
             </View>
             {/* <View style={styles.footer}>
