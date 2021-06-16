@@ -12,7 +12,7 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
 const HEADER_HEIGHT = 350;
@@ -22,7 +22,7 @@ const LocationCardDetail = () => {
     return(
         <View style={{
             paddingLeft: 20,
-            marginTop: 15
+            marginTop: 15,
         }}>
             <Text style={{
                 color: "white",
@@ -35,14 +35,35 @@ const LocationCardDetail = () => {
                 flexDirection: 'row',
                 alignItems: 'center'
             }}>
-            <Ionicons name="ios-location-sharp" size={20} color="white" />
-            <Text style={{
-                color: "white",
-                fontSize: 15,
-                fontWeight: '700'
+                <Ionicons name="ios-location-sharp" size={20} color="white" />
+                <Text style={{
+                    color: "white",
+                    fontSize: 15,
+                    fontWeight: '700'
+                }}>
+                    Malé, Maldives
+                </Text>
+            </View>
+            <View style={{
+                position: 'absolute',
+                right: 10,
+                bottom: 0,
             }}>
-                Malé, Maldives
-            </Text>
+                <View style={{
+                    flexDirection:'row',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <AntDesign name="star" size={11} color="#ffff00" />
+                    <Text style={{
+                        color: 'white',
+                        fontSize: 12,
+                        fontWeight: '700',
+                        paddingLeft: 5
+                    }}>
+                        4.8
+                    </Text>
+                </View>
             </View>
         </View>
     )
