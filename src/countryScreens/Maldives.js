@@ -59,12 +59,6 @@ const Maldives = () => {
                     style={{
                         alignItems: 'center',
                         justifyContent: 'center',
-                        height: 32,
-                        width: 32,
-                        borderRadius: 10,
-                        borderWidth: 1,
-                        borderColor: '#F5F6FB',
-                        backgroundColor: 'rgba(2, 2, 2, 0.5)',
                     }}
                     activeOpacity={0.8}
                     onPress={() => {
@@ -72,7 +66,7 @@ const Maldives = () => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                     }}
                 >
-                    <Ionicons name="ios-chevron-back" size={24} color="white" />
+                    <Ionicons name="ios-chevron-back" size={32} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity 
                     style={{
@@ -87,7 +81,7 @@ const Maldives = () => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                     }}
                 >
-                    <Ionicons name="ios-share-social-outline" size={24} color="black" />
+                    <Ionicons name="ios-share-outline" size={30} color="white" />
                 </TouchableOpacity>
             </View>
         )
@@ -101,7 +95,7 @@ const Maldives = () => {
                     paddingTop: 1000,
                     alignItems:'center',
                     overflow: 'hidden',
-                    backgroundColor: '#f9ebf7',
+                    backgroundColor: '#66ffb3',
                     borderBottomRightRadius: 20,
                     borderBottomLeftRadius: 20
                 }}
