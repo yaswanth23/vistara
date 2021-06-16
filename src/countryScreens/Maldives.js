@@ -20,7 +20,31 @@ const screenWidth = Dimensions.get('window').width;
 
 const LocationCardDetail = () => {
     return(
-        <View></View>
+        <View style={{
+            paddingLeft: 20,
+            marginTop: 15
+        }}>
+            <Text style={{
+                color: "white",
+                fontSize: 24,
+                fontWeight: '600',
+            }}>
+                Fun Island Resort
+            </Text>
+            <View style={{
+                flexDirection: 'row',
+                alignItems: 'center'
+            }}>
+            <Ionicons name="ios-location-sharp" size={20} color="white" />
+            <Text style={{
+                color: "white",
+                fontSize: 15,
+                fontWeight: '700'
+            }}>
+                Malé, Maldives
+            </Text>
+            </View>
+        </View>
     )
 }
 
@@ -55,12 +79,59 @@ const Maldives = () => {
                 paddingHorizontal: 24,
                 paddingBottom: 10
             }}>
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: '#081a26',
+                        opacity: scrollY.interpolate({
+                            inputRange: [HEADER_HEIGHT - 100, HEADER_HEIGHT - 70],
+                            outputRange: [0,1]
+                        })
+                    }} 
+                />
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        alignItems: 'center',
+                        justifyContent: 'flex-end',
+                        paddingBottom: 10,
+                        opacity: scrollY.interpolate({
+                            inputRange: [HEADER_HEIGHT - 100, HEADER_HEIGHT - 50],
+                            outputRange: [0,1]
+                        }),
+                        transform: [
+                            {
+                                translateY: scrollY.interpolate({
+                                    inputRange:[HEADER_HEIGHT - 100, HEADER_HEIGHT - 50],
+                                    outputRange: [50,0],
+                                    extrapolate: 'clamp'
+                                })
+                            }
+                        ]
+                    }} 
+                >
+                    <Text style={{
+                        color: 'white',
+                        fontSize: 19,
+                        fontWeight: '700'
+                    }}>
+                        Maldives
+                    </Text>
+                </Animated.View>
                 <TouchableOpacity 
                     style={{
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}
-                    activeOpacity={0.8}
+                    activeOpacity={1}
                     onPress={() => {
                         navigation.goBack();
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -75,7 +146,7 @@ const Maldives = () => {
                         height: 32,
                         width: 32,
                     }}
-                    activeOpacity={0.8}
+                    activeOpacity={1}
                     onPress={() => {
                         navigation.goBack();
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -95,7 +166,7 @@ const Maldives = () => {
                     paddingTop: 1000,
                     alignItems:'center',
                     overflow: 'hidden',
-                    backgroundColor: '#66ffb3',
+                    backgroundColor: '#ccffeb',
                     borderBottomRightRadius: 20,
                     borderBottomLeftRadius: 20
                 }}
@@ -131,6 +202,15 @@ const Maldives = () => {
                         height: 80,
                         borderRadius: 10,
                         overflow: 'hidden',
+                        transform: [
+                            {
+                                translateY: scrollY.interpolate({
+                                    inputRange: [0, 170, 250],
+                                    outputRange: [0, 0, 100],
+                                    extrapolate: 'clamp'
+                                })
+                            }
+                        ]
                     }}
                 >
                     <LocationCardInfo />
