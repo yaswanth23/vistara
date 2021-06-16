@@ -12,7 +12,7 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
 const HEADER_HEIGHT = 350;
@@ -54,7 +54,11 @@ const LocationCardDetail = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <AntDesign name="star" size={11} color="#ffff00" />
+                    <FontAwesome name="star" size={12} color="#ffff00" />
+                    <FontAwesome name="star" size={12} color="#ffff00" />
+                    <FontAwesome name="star" size={12} color="#ffff00" />
+                    <FontAwesome name="star" size={12} color="#ffff00" />
+                    <FontAwesome name="star-half-full" size={12} color="#ffff00" />
                     <Text style={{
                         color: 'white',
                         fontSize: 12,
