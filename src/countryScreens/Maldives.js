@@ -424,6 +424,29 @@ const Maldives = () => {
         )
     }
 
+    function renderAboutInfoSection(){
+        return(
+            <View style={{
+                marginTop: 20,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <Text style={{
+                    color: '#808080',
+                    fontSize: 13,
+                    fontWeight: '600',
+                    lineHeight: 22
+                }}>
+                    The Maldives is a tropical nation in the Indian Ocean composed of
+                    26 ring-shaped atolls, which are made up of more than 1,000 coral islands.
+                    It's known for its beaches, blue lagoons and extensive reefs. Malé is the 
+                    capital city of the Maldives. It is a city full of beautiful landscapes. 
+                    The city streets, rather than being paved with tarmac, are sprinkled with white sand of the beach.
+                </Text>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -436,6 +459,7 @@ const Maldives = () => {
                         {renderHeaderInfoSection()}
                         {renderIconInfoSection()}
                         {renderReviewInfoSection()}
+                        {renderAboutInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
