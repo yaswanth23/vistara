@@ -15,6 +15,7 @@ import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import { SliderBox } from "react-native-image-slider-box";
 
 const HEADER_HEIGHT = 350;
 const screenWidth = Dimensions.get('window').width;
@@ -447,6 +448,28 @@ const Maldives = () => {
         )
     }
 
+    function renderImageSliderInfoSection(){
+        return(
+            <View style={{
+                marginTop: 20,
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginLeft: 30
+                }}>
+                    <Fontisto name="photograph" size={24} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 16 ,fontWeight: '700', paddingLeft: 5}}>Gallery</Text>
+                </View>
+                <View style={{
+                    marginTop: 15
+                }}>
+                    
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -460,6 +483,7 @@ const Maldives = () => {
                         {renderIconInfoSection()}
                         {renderReviewInfoSection()}
                         {renderAboutInfoSection()}
+                        {renderImageSliderInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
