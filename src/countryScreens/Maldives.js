@@ -12,7 +12,7 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
 const HEADER_HEIGHT = 350;
@@ -252,6 +252,84 @@ const Maldives = () => {
         )
     }
 
+    function renderIconInfoSection(){
+        return(
+            <View style={{
+                marginTop: 20,
+                marginRight: 30,
+                marginLeft: 30,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'baseline'
+            }}>
+                <View style={{
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <View style={{
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        borderColor: '#d9d9d9'
+                    }}>
+                        <Ionicons name="ios-wifi" size={24} color="#808080" style={{padding: 10}}/>
+                    </View>
+                    <View style={styles.infoHeaderStyle}>
+                        <Text style={styles.infoStyle}>Free</Text>
+                        <Text style={styles.infoStyle}>Wi-Fi</Text>
+                    </View>
+                </View>
+                <View style={{
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <View style={{
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        borderColor: '#d9d9d9',
+                    }}>
+                        <MaterialCommunityIcons name="beach" size={24} color="#808080" style={{padding: 10}}/>
+                    </View>
+                    <View style={styles.infoHeaderStyle}>
+                        <Text style={styles.infoStyle}>Sand</Text>
+                        <Text style={styles.infoStyle}>Beach</Text>
+                    </View>
+                </View>
+                <View style={{
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <View style={{
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        borderColor: '#e6e6e6',
+                    }}>
+                        <Fontisto name="sait-boat" size={24} color="#808080" style={{padding: 10}}/>
+                    </View>
+                    <View style={styles.infoHeaderStyle}>
+                        <Text style={styles.infoStyle}>Boating /</Text>
+                        <Text style={styles.infoStyle}>Surfing</Text>
+                    </View>
+                </View>
+                <View style={{
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <View style={{
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        borderColor: '#e6e6e6',
+                    }}>
+                        <MaterialCommunityIcons name="food-fork-drink" size={24} color="#808080" style={{padding: 10}}/>
+                    </View>
+                    <View style={styles.infoHeaderStyle}>
+                        <Text style={styles.infoStyle}>Bar and</Text>
+                        <Text style={styles.infoStyle}>Restaurant</Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -262,6 +340,7 @@ const Maldives = () => {
                 ListHeaderComponent = {
                     <View>
                         {renderHeaderInfoSection()}
+                        {renderIconInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
@@ -271,11 +350,8 @@ const Maldives = () => {
                 renderItem={({item}) => (
                     <View 
                         style={{
-                            flexDirection: 'row',
-
                         }}
                     >
-                        <Text>{item.placeName}</Text>
                     </View>
                 )}
             />
@@ -288,6 +364,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white'
+    },
+    infoHeaderStyle: {
+        marginTop: 5
+    },
+    infoStyle: {
+        fontSize: 10,
+        fontWeight: '700',
+        color: '#666'
     }
 });
 
