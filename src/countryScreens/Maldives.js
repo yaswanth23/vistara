@@ -7,7 +7,8 @@ import {
     TouchableOpacity,
     Animated,
     FlatList,
-    StatusBar
+    StatusBar,
+    Image
 } from 'react-native';
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
@@ -255,7 +256,7 @@ const Maldives = () => {
     function renderIconInfoSection(){
         return(
             <View style={{
-                marginTop: 20,
+                marginTop: 25,
                 marginRight: 30,
                 marginLeft: 30,
                 flexDirection: 'row',
@@ -330,6 +331,99 @@ const Maldives = () => {
         )
     }
 
+    function renderReviewInfoSection(){
+        return(
+            <View style={{
+                marginTop: 20,
+                flexDirection: 'row',
+                justifyContent: 'space-evenly'
+            }}>
+                <View style={styles.reviewStyle}>
+                    <View style={{
+                        padding: 10,
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            marginTop: 5
+                        }}>
+                            <View style={{
+                                backgroundColor: '#cce0ff',
+                                height: 40,
+                                width: 40,
+                                borderRadius: 10,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Image style={styles.tinyLogoImage} source={require('../../res/images/BK.png')} />
+                            </View>
+                            <View style={{
+                                paddingLeft: 15
+                            }}>
+                                <Text style={styles.ratingStyle1}>Booking</Text>
+                                <Text style={styles.ratingStyle2}>4.8/5</Text>
+                            </View>
+                        </View>
+                        <View style={{
+                            bottom: -15
+                        }}>
+                            <Text style={{
+                                color: '#999',
+                                fontSize: 12,
+                                fontWeight: '700'
+                            }}>
+                                Based on 5,213 reviews
+                            </Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.reviewStyle}>
+                    <View style={{
+                        padding: 10,
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            marginTop: 5
+                        }}>
+                            <View style={{
+                                backgroundColor: '#cce0ff',
+                                height: 40,
+                                width: 40,
+                                borderRadius: 10,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Fontisto name="hotel-alt" size={24} color="#003580" />
+                            </View>
+                            <View style={{
+                                paddingLeft: 15
+                            }}>
+                                <Text style={styles.ratingStyle1}>HotelOut</Text>
+                                <Text style={styles.ratingStyle2}>8.0/10</Text>
+                            </View>
+                        </View>
+                        <View style={{
+                            bottom: -15
+                        }}>
+                            <Text style={{
+                                color: '#999',
+                                fontSize: 12,
+                                fontWeight: '700'
+                            }}>
+                                Based on 823 reviews
+                            </Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -341,6 +435,7 @@ const Maldives = () => {
                     <View>
                         {renderHeaderInfoSection()}
                         {renderIconInfoSection()}
+                        {renderReviewInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
@@ -372,6 +467,27 @@ const styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: '700',
         color: '#666'
+    },
+    reviewStyle: {
+        backgroundColor: '#e6f0ff',
+        height: 100,
+        width: screenWidth * 0.45,
+        borderRadius: 20
+    },
+    tinyLogoImage: {
+        height: 25,
+        width: 25
+    },
+    ratingStyle1: {
+        color: '#808080',
+        fontSize: 15,
+        fontWeight: '700'
+    },
+    ratingStyle2: {
+        paddingTop: 4,
+        color: '#808080',
+        fontSize: 14,
+        fontWeight: '700'
     }
 });
 
