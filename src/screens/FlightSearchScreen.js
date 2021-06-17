@@ -39,7 +39,7 @@ const FlightSearchScreen = () => {
             }}
         >
             <View style={styles.container}>
-                <StatusBar backgroundColor={'#f9ebf7'} barStyle="dark-content" />
+                <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
                 <View style={styles.header}>
                     <View style={{
                         marginTop: 25,

@@ -68,6 +68,14 @@ const LocationCardDetail = () => {
                         4.8
                     </Text>
                 </View>
+                <View>
+                    <Text style={{
+                        color: '#f2f2f2',
+                        fontWeight: '700',
+                        fontSize: 10
+                    }}
+                    >(5,213 reviews)</Text>
+                </View>
             </View>
         </View>
     )
@@ -246,7 +254,7 @@ const Maldives = () => {
 
     return(
         <View style={styles.container}>
-            <StatusBar backgroundColor={'#fff'} barStyle="light-content" />
+            <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
             <Animated.FlatList 
                 data={sectionData}
                 keyExtractor={item => `${item.id}`}
