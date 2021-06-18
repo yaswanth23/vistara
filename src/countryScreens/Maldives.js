@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
     View,
     Text,
@@ -8,14 +8,13 @@ import {
     Animated,
     FlatList,
     StatusBar,
-    Image
+    Image,
 } from 'react-native';
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import { SliderBox } from "react-native-image-slider-box";
 
 const HEADER_HEIGHT = 350;
 const screenWidth = Dimensions.get('window').width;
@@ -201,7 +200,7 @@ const Maldives = () => {
                     paddingTop: 1000,
                     alignItems:'center',
                     overflow: 'hidden',
-                    backgroundColor: '#ccffeb',
+                    backgroundColor: '#081a26',
                     borderBottomRightRadius: 20,
                     borderBottomLeftRadius: 20
                 }}
@@ -449,6 +448,13 @@ const Maldives = () => {
     }
 
     function renderImageSliderInfoSection(){
+        const [maldivesImages, setMaldivesImages] = useState([
+            require('../../res/images/maldives1.jpg'),
+            require('../../res/images/maldives2.jpg'),
+            require('../../res/images/maldives3.jpg'),
+            require('../../res/images/maldives4.jpg'),
+        ]);
+
         return(
             <View style={{
                 marginTop: 20,
@@ -464,7 +470,25 @@ const Maldives = () => {
                 <View style={{
                     marginTop: 15
                 }}>
-                    
+                    <FlatList 
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        data={maldivesImages}
+                        keyExtractor={(item, index) => 'key'+index}
+                        renderItem={({item, index}) => (
+                            <Image 
+                                source={item}
+                                style={{
+                                    width: screenWidth *0.8,
+                                    height: 250,
+                                    borderRadius: 20,
+                                    resizeMode:'cover',
+                                    marginLeft: 15,
+                                    marginRight: 15
+                                }}
+                            />
+                        )}
+                    />
                 </View>
             </View>
         )
