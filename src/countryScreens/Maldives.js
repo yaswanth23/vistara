@@ -515,10 +515,7 @@ const Maldives = () => {
                     { nativeEvent: { contentOffset: { y: scrollY } } }
                 ],{ useNativeDriver: true })}
                 renderItem={({item}) => (
-                    <View 
-                        style={{
-                        }}
-                    >
+                    <View>
                     </View>
                 )}
             />
