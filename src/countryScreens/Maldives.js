@@ -13,7 +13,7 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons, Entypo } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
 const HEADER_HEIGHT = 350;
@@ -427,7 +427,7 @@ const Maldives = () => {
     function renderAboutInfoSection(){
         return(
             <View style={{
-                marginTop: 20,
+                marginTop: 30,
                 marginLeft: 30,
                 marginRight: 30
             }}>
@@ -457,7 +457,7 @@ const Maldives = () => {
 
         return(
             <View style={{
-                marginTop: 20,
+                marginTop: 30,
             }}>
                 <View style={{
                     flexDirection: 'row',
@@ -468,7 +468,7 @@ const Maldives = () => {
                     <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>Gallery</Text>
                 </View>
                 <View style={{
-                    marginTop: 15
+                    marginTop: 20
                 }}>
                     <FlatList 
                         horizontal
@@ -494,6 +494,96 @@ const Maldives = () => {
         )
     }
 
+    function renderBookingDetailsInfoSection(){
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialIcons name="info-outline" size={18} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>Booking details</Text>
+                </View>
+                <View style={{
+                    marginTop: 15
+                }}>
+                    <View style={{
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 3
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            redeem your stay from any time between <Text style={{textDecorationLine:'underline', textDecorationColor:'black'}}> 17 June 2021 to 31 December 2021</Text>
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 3
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            receive a full refund in case of cancellation, 15 days
+                            prior to the date of your check-in
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 3
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            to check for availability of dates and for any further
+                            queries and clarifications please reach out to the travel expert at 
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> 080-47185303</Text>
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -508,6 +598,7 @@ const Maldives = () => {
                         {renderReviewInfoSection()}
                         {renderAboutInfoSection()}
                         {renderImageSliderInfoSection()}
+                        {renderBookingDetailsInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
