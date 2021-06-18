@@ -13,7 +13,7 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
 const HEADER_HEIGHT = 350;
@@ -519,7 +519,7 @@ const Maldives = () => {
                             fontSize: 6,
                             color: '#808080',
                             paddingRight: 4,
-                            paddingTop: 3
+                            paddingTop: 6
                         }}>
                             {'\u2B24'}
                         </Text>
@@ -541,7 +541,7 @@ const Maldives = () => {
                             fontSize: 6,
                             color: '#808080',
                             paddingRight: 4,
-                            paddingTop: 3
+                            paddingTop: 6
                         }}>
                             {'\u2B24'}
                         </Text>
@@ -564,7 +564,7 @@ const Maldives = () => {
                             fontSize: 6,
                             color: '#808080',
                             paddingRight: 4,
-                            paddingTop: 3
+                            paddingTop: 6
                         }}>
                             {'\u2B24'}
                         </Text>
