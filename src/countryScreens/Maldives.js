@@ -464,8 +464,8 @@ const Maldives = () => {
                     alignItems: 'center',
                     marginLeft: 30
                 }}>
-                    <Fontisto name="photograph" size={24} color="#003580" />
-                    <Text style={{color:'#003580', fontSize: 16 ,fontWeight: '700', paddingLeft: 5}}>Gallery</Text>
+                    <Fontisto name="photograph" size={18} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>Gallery</Text>
                 </View>
                 <View style={{
                     marginTop: 15
