@@ -666,6 +666,93 @@ const Maldives = () => {
         )
     }
 
+    function renderAmenityInfoSection(){
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialCommunityIcons name="hand-pointing-right" size={20} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>what you get</Text>
+                </View>
+                <View style={{
+                    marginTop: 15
+                }}>
+                    <View style={{
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            well - stocked minibar | air conditioning | wardrobe | electric kettle | iron | sofa
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            hand sanitizer | tea / coffee maker | safety deposit box
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            laptop safe | wake - up service | single - room air conditioning (for guest accommodation)
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -683,6 +770,7 @@ const Maldives = () => {
                         {renderBookingDetailsInfoSection()}
                         {renderStayDetailsInfoSection()}
                         {renderResortImageSliderInfoSection()}
+                        {renderAmenityInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
