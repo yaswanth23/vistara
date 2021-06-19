@@ -579,6 +579,29 @@ const Maldives = () => {
                             <Text style={{fontSize:14, color:'#66a3ff'}}> 080-47185303</Text>
                         </Text>
                     </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            a travel expert from Malé will get in touch with you within 72 hours to 
+                            help you book your preferred dates
+                        </Text>
+                    </View>
                 </View>
             </View>
         )
@@ -753,6 +776,119 @@ const Maldives = () => {
         )
     }
 
+    function renderAccessInfoSection(){
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialCommunityIcons name="hand-pointing-right" size={20} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>get access to</Text>
+                </View>
+                <View style={{
+                    marginTop: 15
+                }}>
+                    <View style={{
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            NU, a Mediterranean sea food restaurant that offers exquisite 3 course 
+                            meals from the French, Italian & Mediterranean cusiness
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            Charcoal Beach Grill, a barbeque restaurant with the best grills & kebabs 
+                            to flatter your tastebuds
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            KAAGE, a speciality fine dining restaurant for a luxurious culinary 
+                            experience (every day except Friday and dress code is required)
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            please note: any one restaurant is accessible on pre-booking once during 
+                            your 3 night stay
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -771,6 +907,7 @@ const Maldives = () => {
                         {renderStayDetailsInfoSection()}
                         {renderResortImageSliderInfoSection()}
                         {renderAmenityInfoSection()}
+                        {renderAccessInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
