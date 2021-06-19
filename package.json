@@ -28,6 +28,7 @@
     "react-native-gesture-handler": "~1.10.2",
     "react-native-haptic-feedback": "^1.11.0",
     "react-native-image-slider-box": "^1.0.12",
+    "react-native-raw-bottom-sheet": "^2.2.0",
     "react-native-reanimated": "~2.1.0",
     "react-native-router-flux": "^4.3.1",
     "react-native-safe-area-context": "3.2.0",
@@ -36,7 +37,8 @@
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.16.3",
     "react-navigation": "^4.4.4",
-    "react-navigation-stack": "^2.10.4"
+    "react-navigation-stack": "^2.10.4",
+    "reanimated-bottom-sheet": "^1.0.0-alpha.22"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3"

@@ -15,9 +15,11 @@ import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import RBSheet from "react-native-raw-bottom-sheet";
 
 const HEADER_HEIGHT = 350;
 const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const LocationCardDetail = () => {
     return(
@@ -978,6 +980,101 @@ const Maldives = () => {
         )
     }
 
+    function renderRoomSelectionInfoSection(){
+        const refRBSheet = useRef();
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialCommunityIcons name="hand-pointing-right" size={20} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>select room type</Text>
+                </View>
+                <View style={{
+                    marginTop: 15,
+                    marginLeft: 30,
+                    marginBottom: 50
+                }}>
+                    
+                    <TouchableOpacity
+                        onPress={() => {
+                            refRBSheet.current.open();
+                            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        }}
+                    >
+                        <View>
+                            <Text style={{
+                                color: '#0066cc',
+                                fontSize: 14,
+                                fontWeight: '600',
+                            }}>
+                                pick your preferred room type
+                            </Text>
+                            <Text style={{
+                                position: 'absolute',
+                                right: 0,
+                                color: '#0066cc',
+                                fontSize: 13,
+                                fontWeight: '600',
+                                textDecorationLine: 'underline',
+                                textDecorationStyle: 'dotted',
+                            }}>
+                                Edit
+                            </Text>
+                        </View>    
+                    </TouchableOpacity>
+                    <RBSheet 
+                        ref={refRBSheet}
+                        closeOnDragDown={true}
+                        closeOnPressMask={true}
+                        height={300}
+                        customStyles={{
+                            container: {
+                                borderTopRightRadius: 20,
+                                borderTopLeftRadius: 20
+                            }
+                        }}
+                    >
+                        <View style={{
+                            marginTop: 20,
+                        }}>
+                            <View style={{
+                                marginLeft: 40
+                            }}>
+                                <Text style={{
+                                    fontSize: 20,
+                                    fontWeight: '700',
+                                    color: 'black',
+                                    letterSpacing: 1
+                                }}>
+                                    select room type
+                                </Text>
+                                <Text style={{
+                                    fontSize: 15,
+                                    fontWeight: '600',
+                                    color: '#808080',
+                                    paddingTop: 10
+                                }}>
+                                    pick your preferred room type
+                                </Text>
+                            </View>
+                            <View style={{
+                                borderBottomColor: '#d9d9d9',
+                                borderBottomWidth: 1,
+                                marginTop: 20
+                            }}/>
+                        </View>
+                    </RBSheet>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -998,6 +1095,7 @@ const Maldives = () => {
                         {renderAmenityInfoSection()}
                         {renderAccessInfoSection()}
                         {renderTermsInfoSection()}
+                        {renderRoomSelectionInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
