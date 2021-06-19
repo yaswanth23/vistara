@@ -1149,6 +1149,7 @@ const Maldives = () => {
                                 <TouchableOpacity
                                     activeOpacity={1}
                                     onPress={() => {
+                                        refRBSheet.current.close()
                                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                                     }}
                                 >
