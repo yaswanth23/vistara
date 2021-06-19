@@ -982,6 +982,31 @@ const Maldives = () => {
 
     function renderRoomSelectionInfoSection(){
         const refRBSheet = useRef();
+        const [roomType, setRoomType] = useState('');
+        const [beachColor, setBeachColor] = useState('#999999');
+        const [waterColor, setWaterColor] = useState('#999999');
+
+        console.log("----"+roomType);
+        const colorShiftBeach = () => {
+            if(roomType === 'beach'){
+                setBeachColor('black')
+                setWaterColor('#999999')
+            }else {
+                setBeachColor('#999999')
+                setWaterColor('black')
+            }
+        }
+
+        const colorShiftWater = () => {
+            if(roomType === 'water'){
+                setBeachColor('#999999')
+                setWaterColor('black')
+            }else {
+                setBeachColor('black')
+                setWaterColor('#999999')
+            }
+        }
+
         return(
             <View style={{
                 marginTop: 30,
@@ -1001,9 +1026,12 @@ const Maldives = () => {
                 }}>
                     
                     <TouchableOpacity
+                        activeOpacity={0.9}
                         onPress={() => {
                             refRBSheet.current.open();
                             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                            setBeachColor('#999999')
+                            setWaterColor('#999999')
                         }}
                     >
                         <View>
@@ -1067,6 +1095,82 @@ const Maldives = () => {
                                 borderBottomWidth: 1,
                                 marginTop: 20
                             }}/>
+                            <View style={{
+                                marginTop: 20,
+                                marginLeft: 40,
+                            }}>
+                                <TouchableOpacity
+                                    activeOpacity={1}
+                                    onPress={() => {
+                                        setRoomType('beach')
+                                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                                        if(roomType === 'beach'){
+                                            setBeachColor('black')
+                                            setWaterColor('#999999')
+                                        }
+                                    }}
+                                >
+                                    <Text style={{
+                                        fontSize: 18,
+                                        letterSpacing: 1,
+                                        fontWeight: '700',
+                                        color: beachColor
+                                    }}>
+                                        Beach Villa
+                                    </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    activeOpacity={1}
+                                    onPress={() => {
+                                        setRoomType('water')
+                                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                                        if(roomType === 'water'){
+                                            setBeachColor('#999999')
+                                            setWaterColor('black')
+                                        }
+                                    }} 
+                                >
+                                    <Text style={{
+                                        marginTop:20,
+                                        fontSize: 18,
+                                        letterSpacing: 1,
+                                        fontWeight: '700',
+                                        color: waterColor
+                                    }}>
+                                        Water Villa
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{
+                                marginTop: 30,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <TouchableOpacity
+                                    activeOpacity={1}
+                                    onPress={() => {
+                                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                                    }}
+                                >
+                                    <View style={{
+                                        width: screenWidth * 0.85,
+                                        height: 45,
+                                        backgroundColor: '#271625',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        borderRadius: 10,
+                                    }}>
+                                        <Text style={{
+                                            fontSize: 15,
+                                            color: 'white',
+                                            letterSpacing: 1,
+                                            fontWeight: '600'
+                                        }}>
+                                            Done
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </RBSheet>
                 </View>
@@ -1102,7 +1206,7 @@ const Maldives = () => {
                     { nativeEvent: { contentOffset: { y: scrollY } } }
                 ],{ useNativeDriver: true })}
                 renderItem={({item}) => (
-                    <View style={{marginBottom:20}}>
+                    <View>
                     </View>
                 )}
             />
