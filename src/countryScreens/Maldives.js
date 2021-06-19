@@ -465,7 +465,7 @@ const Maldives = () => {
                     marginLeft: 30
                 }}>
                     <Fontisto name="photograph" size={18} color="#003580" />
-                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>Gallery</Text>
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>gallery</Text>
                 </View>
                 <View style={{
                     marginTop: 20
@@ -506,7 +506,7 @@ const Maldives = () => {
                     alignItems: 'center'
                 }}>
                     <MaterialIcons name="info-outline" size={18} color="#003580" />
-                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>Booking details</Text>
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>booking details</Text>
                 </View>
                 <View style={{
                     marginTop: 15
@@ -584,6 +584,40 @@ const Maldives = () => {
         )
     }
 
+    function renderStayDetailsInfoSection(){
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialIcons name="info-outline" size={18} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>details of your stay</Text>
+                </View>
+                <View style={{
+                    marginTop: 15,
+                    paddingLeft: 30
+                }}>
+                    <Text style={{
+                        color: '#808080',
+                        fontSize: 13,
+                        fontWeight: '600',
+                        lineHeight: 20
+                    }}>
+                            breathe in peace at your own aquatic paradise with endless views 
+                            of the ocean. located at the end of a wooden jetty, this luxurious 
+                            resort offers an uninterrupted sunset view that will stay in your 
+                            heart for a lifetime
+                    </Text>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -599,6 +633,7 @@ const Maldives = () => {
                         {renderAboutInfoSection()}
                         {renderImageSliderInfoSection()}
                         {renderBookingDetailsInfoSection()}
+                        {renderStayDetailsInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
