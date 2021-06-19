@@ -618,6 +618,54 @@ const Maldives = () => {
         )
     }
 
+    function renderResortImageSliderInfoSection(){
+        const [maldivesImages, setMaldivesImages] = useState([
+            require('../../res/images/mhotel1.jpg'),
+            require('../../res/images/mhotel2.jpg'),
+            require('../../res/images/mhotel3.jpg'),
+            require('../../res/images/mhotel4.jpg'),
+            require('../../res/images/mhotel5.jpg'),
+        ]);
+
+        return(
+            <View style={{
+                marginTop: 30,
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginLeft: 30
+                }}>
+                    <Fontisto name="photograph" size={18} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>gallery</Text>
+                </View>
+                <View style={{
+                    marginTop: 20
+                }}>
+                    <FlatList 
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        data={maldivesImages}
+                        keyExtractor={(item, index) => 'key'+index}
+                        renderItem={({item, index}) => (
+                            <Image 
+                                source={item}
+                                style={{
+                                    width: screenWidth *0.6,
+                                    height: 200,
+                                    borderRadius: 15,
+                                    resizeMode:'cover',
+                                    marginLeft: 15,
+                                    marginRight: 15
+                                }}
+                            />
+                        )}
+                    />
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -634,6 +682,7 @@ const Maldives = () => {
                         {renderImageSliderInfoSection()}
                         {renderBookingDetailsInfoSection()}
                         {renderStayDetailsInfoSection()}
+                        {renderResortImageSliderInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
