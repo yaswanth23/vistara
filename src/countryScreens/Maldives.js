@@ -998,7 +998,6 @@ const Maldives = () => {
                 <View style={{
                     marginTop: 15,
                     marginLeft: 30,
-                    marginBottom: 50
                 }}>
                     
                     <TouchableOpacity
@@ -1103,7 +1102,7 @@ const Maldives = () => {
                     { nativeEvent: { contentOffset: { y: scrollY } } }
                 ],{ useNativeDriver: true })}
                 renderItem={({item}) => (
-                    <View>
+                    <View style={{marginBottom:20}}>
                     </View>
                 )}
             />
