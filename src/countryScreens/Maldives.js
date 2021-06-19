@@ -889,6 +889,95 @@ const Maldives = () => {
         )
     }
 
+    function renderTermsInfoSection(){
+        return(
+            <View style={{
+                marginTop: 30,
+                marginLeft: 30,
+                marginRight: 30
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <MaterialIcons name="notes" size={18} color="#003580" />
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>important t&cs</Text>
+                </View>
+                <View style={{
+                    marginTop: 15
+                }}>
+                    <View style={{
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            to check for availability of dates and for any further
+                            queries and clarifications please reach out to the travel expert at 
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> 080-47185303</Text>
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            please carry a government photo id when visitng the property
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            all prices are inclusive of taxes
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={'#081a26'} barStyle="light-content" />
@@ -908,6 +997,7 @@ const Maldives = () => {
                         {renderResortImageSliderInfoSection()}
                         {renderAmenityInfoSection()}
                         {renderAccessInfoSection()}
+                        {renderTermsInfoSection()}
                     </View>
                 }
                 scrollEventThrottle={16}
