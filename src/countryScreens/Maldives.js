@@ -13,9 +13,10 @@ import {
 import { BlurView } from 'expo-blur';
 import  sectionData  from "../constants/SectionData";
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, Fontisto, MaterialIcons, Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import RBSheet from "react-native-raw-bottom-sheet";
+import RNPickerSelect from "react-native-picker-select";
 
 const HEADER_HEIGHT = 350;
 const screenWidth = Dimensions.get('window').width;
@@ -982,28 +983,23 @@ const Maldives = () => {
 
     function renderRoomSelectionInfoSection(){
         const refRBSheet = useRef();
-        const [roomType, setRoomType] = useState('');
-        const [beachColor, setBeachColor] = useState('#999999');
-        const [waterColor, setWaterColor] = useState('#999999');
+        const [roomType, setRoomType] = useState('pick your preferred room type');
 
-        console.log("----"+roomType);
-        const colorShiftBeach = () => {
-            if(roomType === 'beach'){
-                setBeachColor('black')
-                setWaterColor('#999999')
-            }else {
-                setBeachColor('#999999')
-                setWaterColor('black')
+        const selectDisable = () => {
+            if(roomType === "pick your preferred room type"){
+                return true
+            }else{
+                return false
             }
         }
 
-        const colorShiftWater = () => {
-            if(roomType === 'water'){
-                setBeachColor('#999999')
-                setWaterColor('black')
+        const selectAmount = (opa) => {
+            if(roomType === "Beach Villa"){
+                return "Pay ₹2,37,000"
+            }else if(roomType === "Water Villa") {
+                return "Pay ₹2,60,000"
             }else {
-                setBeachColor('black')
-                setWaterColor('#999999')
+                return "Make Selection"
             }
         }
 
@@ -1030,8 +1026,6 @@ const Maldives = () => {
                         onPress={() => {
                             refRBSheet.current.open();
                             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                            setBeachColor('#999999')
-                            setWaterColor('#999999')
                         }}
                     >
                         <View>
@@ -1040,7 +1034,7 @@ const Maldives = () => {
                                 fontSize: 14,
                                 fontWeight: '600',
                             }}>
-                                pick your preferred room type
+                                {roomType}
                             </Text>
                             <Text style={{
                                 position: 'absolute',
@@ -1096,50 +1090,43 @@ const Maldives = () => {
                                 marginTop: 20
                             }}/>
                             <View style={{
-                                marginTop: 20,
-                                marginLeft: 40,
+                                alignItems: 'center'
                             }}>
-                                <TouchableOpacity
-                                    activeOpacity={1}
-                                    onPress={() => {
-                                        setRoomType('beach')
-                                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                                        if(roomType === 'beach'){
-                                            setBeachColor('black')
-                                            setWaterColor('#999999')
-                                        }
-                                    }}
-                                >
-                                    <Text style={{
-                                        fontSize: 18,
-                                        letterSpacing: 1,
-                                        fontWeight: '700',
-                                        color: beachColor
-                                    }}>
-                                        Beach Villa
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    activeOpacity={1}
-                                    onPress={() => {
-                                        setRoomType('water')
-                                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                                        if(roomType === 'water'){
-                                            setBeachColor('#999999')
-                                            setWaterColor('black')
-                                        }
-                                    }} 
-                                >
-                                    <Text style={{
-                                        marginTop:20,
-                                        fontSize: 18,
-                                        letterSpacing: 1,
-                                        fontWeight: '700',
-                                        color: waterColor
-                                    }}>
-                                        Water Villa
-                                    </Text>
-                                </TouchableOpacity>
+                                <View style={{
+                                    marginTop: 40,
+                                    borderWidth: 2,
+                                    borderColor: 'black',
+                                    height: 50,
+                                    width: screenWidth * 0.85,
+                                    justifyContent: 'center',
+                                    borderRadius: 10
+                                }}>
+                                    <RNPickerSelect
+                                        placeholder={{label: "select room type...", value: "pick your preferred room type"}}
+                                        Icon={() => <Feather name="chevron-down" size={22} color="black" style={{paddingRight: 20}}/>}
+                                        useNativeAndroidPickerStyle={false}
+                                        onValueChange={(value) => setRoomType(value)}
+                                        items={[
+                                            { label: "Beach Villa", value: "Beach Villa" },
+                                            { label: "Water Villa", value: "Water Villa" },
+                                        ]}
+                                        style={{
+                                            inputIOS: {
+                                                paddingLeft: 20,
+                                                fontSize: 18,
+                                                fontWeight: '600',
+                                                letterSpacing: 1
+                                            },
+                                            inputAndroid: {
+                                                paddingLeft: 20,
+                                                fontSize: 18,
+                                                fontWeight: '600',
+                                                letterSpacing: 1,
+                                                color: 'black'
+                                            }
+                                        }}
+                                    />
+                                </View>
                             </View>
                             <View style={{
                                 marginTop: 30,
@@ -1167,13 +1154,52 @@ const Maldives = () => {
                                             letterSpacing: 1,
                                             fontWeight: '600'
                                         }}>
-                                            Done
+                                            Cancel
                                         </Text>
                                     </View>
                                 </TouchableOpacity>
                             </View>
                         </View>
                     </RBSheet>
+                </View>
+                <View style={{
+                    marginTop: 30,
+                    marginBottom: 50,
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <Text style={{
+                        paddingBottom: 15,
+                        fontSize: 10,
+                        letterSpacing: 1,
+                    }}>
+                        ( Amount will be inclusive of all taxes )
+                    </Text>
+                    <TouchableOpacity
+                        activeOpacity={1}
+                        disabled={selectDisable()}
+                        onPress={() => {
+                            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        }}
+                    >
+                        <View style={{
+                            width: screenWidth * 0.85,
+                            height: 45,
+                            backgroundColor: '#271625',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            borderRadius: 10,
+                        }}>
+                            <Text style={{
+                                fontSize: 15,
+                                color: 'white',
+                                letterSpacing: 1,
+                                fontWeight: '600'
+                            }}>
+                                {selectAmount()}
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
