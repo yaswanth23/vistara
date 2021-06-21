@@ -993,7 +993,7 @@ const Maldives = () => {
             }
         }
 
-        const selectAmount = (opa) => {
+        const selectAmount = () => {
             if(roomType === "Beach Villa"){
                 return "Pay ₹2,37,000"
             }else if(roomType === "Water Villa") {
