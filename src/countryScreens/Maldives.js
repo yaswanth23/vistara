@@ -487,7 +487,8 @@ const Maldives = () => {
                                     borderRadius: 20,
                                     resizeMode:'cover',
                                     marginLeft: 15,
-                                    marginRight: 15
+                                    marginRight: 15,
+                                    backgroundColor: '#e6e6e6'
                                 }}
                             />
                         )}
@@ -682,7 +683,8 @@ const Maldives = () => {
                                     borderRadius: 15,
                                     resizeMode:'cover',
                                     marginLeft: 15,
-                                    marginRight: 15
+                                    marginRight: 15,
+                                    backgroundColor: '#e6e6e6'
                                 }}
                             />
                         )}

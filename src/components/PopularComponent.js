@@ -33,7 +33,8 @@ const PopularComponent = ({cityData, onPress}) => {
                 style={{
                     height: 250,
                     width: 300,
-                    borderRadius: 10
+                    borderRadius: 10,
+                    backgroundColor: '#e6e6e6'
                 }}
             />
             <View style={{
