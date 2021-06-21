@@ -1156,7 +1156,7 @@ const Maldives = () => {
                                             letterSpacing: 1,
                                             fontWeight: '600'
                                         }}>
-                                            Cancel
+                                            Done
                                         </Text>
                                     </View>
                                 </TouchableOpacity>
