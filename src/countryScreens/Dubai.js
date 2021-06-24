@@ -455,10 +455,12 @@ const Dubai = () => {
                     fontWeight: '600',
                     lineHeight: 22
                 }}>
-                    Today, Jumeirah is a Dubai national champion and an acclaimed luxury hospitality 
-                    leader — operating 24 Jumeirah branded properties (6,747 keys) in eight countries, 
-                    and employing more than 13,500 colleagues across 140 nationalities. As exemplified 
-                    through its flagship hotel, and global icon, Burj Al Arab, Jumeirah has transformed the way that luxury is defined.
+                    Situated on its own island, Burj Al Arab Jumeirah features suites overlooking the sea, 
+                    9 signature restaurants and a full-service spa. Guests may arrive at the property by chauffeur-driven 
+                    fleets of Rolls-Royce's or alternatively by a dedicated helicopter transfer service. The terrace offers 
+                    two swimming pools, 32 luxury cabanas, a restaurant and a bar. Featuring floor to ceiling windows with panoramic 
+                    view of the Arabian Gulf, each suite includes an iPad, complimentary WiFi, a 21-inch iMac, and widescreen 
+                    interactive HD TV. Bose iPhone docking station and media hub is also available.
                 </Text>
             </View>
         )
@@ -662,11 +664,13 @@ const Dubai = () => {
 
     function renderResortImageSliderInfoSection(){
         const [maldivesImages, setMaldivesImages] = useState([
-            require('../../res/images/mhotel1.jpg'),
-            require('../../res/images/mhotel2.jpg'),
-            require('../../res/images/mhotel3.jpg'),
-            require('../../res/images/mhotel4.jpg'),
-            require('../../res/images/mhotel5.jpg'),
+            require('../../res/images/dhotel1.jpg'),
+            require('../../res/images/dhotel2.jpg'),
+            require('../../res/images/dhotel3.jpg'),
+            require('../../res/images/dhotel4.jpg'),
+            require('../../res/images/dhotel5.jpg'),
+            require('../../res/images/dhotel6.jpg'),
+            require('../../res/images/dhotel7.jpg'),
         ]);
 
         return(
