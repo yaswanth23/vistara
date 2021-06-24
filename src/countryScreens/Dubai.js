@@ -748,7 +748,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            well - stocked minibar | air conditioning | wardrobe | electric kettle | iron | sofa
+                            flat-screen TV
                         </Text>
                     </View>
                     <View style={{
@@ -770,7 +770,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            hand sanitizer | tea / coffee maker | safety deposit box
+                            safety deposit box
                         </Text>
                     </View>
                     <View style={{
@@ -792,7 +792,205 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            laptop safe | wake - up service | single - room air conditioning (for guest accommodation)
+                            air conditioning
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            desk
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            wi-fi
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            ironing facilities
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            coffee and tea maker
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            well-stocked minibar
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            electric kettle
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            dressing room
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            wake-up service
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
+                            closet
                         </Text>
                     </View>
                 </View>
