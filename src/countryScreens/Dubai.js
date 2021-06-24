@@ -123,7 +123,7 @@ const Dubai = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundColor: '#081a26',
+                        backgroundColor: '#593758',
                         opacity: scrollY.interpolate({
                             inputRange: [HEADER_HEIGHT - 100, HEADER_HEIGHT - 70],
                             outputRange: [0,1]
@@ -289,13 +289,29 @@ const Dubai = () => {
                     <View style={{
                         borderWidth: 1,
                         borderRadius: 30,
-                        borderColor: '#d9d9d9',
+                        borderColor: '#d9d9d9'
                     }}>
-                        <MaterialCommunityIcons name="beach" size={24} color="#808080" style={{padding: 10}}/>
+                        <MaterialIcons name="beach-access" size={24} color="#808080" style={{padding: 10}}/>
                     </View>
                     <View style={styles.infoHeaderStyle}>
-                        <Text style={styles.infoStyle}>Sand</Text>
                         <Text style={styles.infoStyle}>Beach</Text>
+                        <Text style={styles.infoStyle}>access</Text>
+                    </View>
+                </View>
+                <View style={{
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <View style={{
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        borderColor: '#d9d9d9',
+                    }}>
+                        <MaterialCommunityIcons name="pool" size={24} color="#808080" style={{padding: 10}}/>
+                    </View>
+                    <View style={styles.infoHeaderStyle}>
+                        <Text style={styles.infoStyle}>Indoor &</Text>
+                        <Text style={styles.infoStyle}>Outdoor pool</Text>
                     </View>
                 </View>
                 <View style={{
@@ -307,11 +323,10 @@ const Dubai = () => {
                         borderRadius: 30,
                         borderColor: '#e6e6e6',
                     }}>
-                        <Fontisto name="sait-boat" size={24} color="#808080" style={{padding: 10}}/>
+                        <MaterialCommunityIcons name="spa" size={24} color="#808080" style={{padding: 10}}/>
                     </View>
                     <View style={styles.infoHeaderStyle}>
-                        <Text style={styles.infoStyle}>Boating /</Text>
-                        <Text style={styles.infoStyle}>Surfing</Text>
+                        <Text style={styles.infoStyle}>Spa</Text>
                     </View>
                 </View>
                 <View style={{
@@ -366,7 +381,7 @@ const Dubai = () => {
                                 paddingLeft: 15
                             }}>
                                 <Text style={styles.ratingStyle1}>Booking</Text>
-                                <Text style={styles.ratingStyle2}>4.8/5</Text>
+                                <Text style={styles.ratingStyle2}>4.7/5</Text>
                             </View>
                         </View>
                         <View style={{
@@ -377,7 +392,7 @@ const Dubai = () => {
                                 fontSize: 12,
                                 fontWeight: '700'
                             }}>
-                                Based on 5,213 reviews
+                                Based on 21,125 reviews
                             </Text>
                         </View>
                     </View>
@@ -407,7 +422,7 @@ const Dubai = () => {
                                 paddingLeft: 15
                             }}>
                                 <Text style={styles.ratingStyle1}>HotelOut</Text>
-                                <Text style={styles.ratingStyle2}>8.0/10</Text>
+                                <Text style={styles.ratingStyle2}>7.9/10</Text>
                             </View>
                         </View>
                         <View style={{
@@ -418,7 +433,7 @@ const Dubai = () => {
                                 fontSize: 12,
                                 fontWeight: '700'
                             }}>
-                                Based on 823 reviews
+                                Based on 3,235 reviews
                             </Text>
                         </View>
                     </View>
@@ -440,11 +455,10 @@ const Dubai = () => {
                     fontWeight: '600',
                     lineHeight: 22
                 }}>
-                    The Maldives is a tropical nation in the Indian Ocean composed of
-                    26 ring-shaped atolls, which are made up of more than 1,000 coral islands.
-                    It's known for its beaches, blue lagoons and extensive reefs. Malé is the 
-                    capital city of the Maldives. It is a city full of beautiful landscapes. 
-                    The city streets, rather than being paved with tarmac, are sprinkled with white sand of the beach.
+                    Today, Jumeirah is a Dubai national champion and an acclaimed luxury hospitality 
+                    leader — operating 24 Jumeirah branded properties (6,747 keys) in eight countries, 
+                    and employing more than 13,500 colleagues across 140 nationalities. As exemplified 
+                    through its flagship hotel, and global icon, Burj Al Arab, Jumeirah has transformed the way that luxury is defined.
                 </Text>
             </View>
         )
@@ -452,10 +466,11 @@ const Dubai = () => {
 
     function renderImageSliderInfoSection(){
         const [maldivesImages, setMaldivesImages] = useState([
-            require('../../res/images/maldives1.jpg'),
-            require('../../res/images/maldives2.jpg'),
-            require('../../res/images/maldives3.jpg'),
-            require('../../res/images/maldives4.jpg'),
+            require('../../res/images/dubai3.jpg'),
+            require('../../res/images/dubai6.jpg'),
+            require('../../res/images/dubai2.jpg'),
+            require('../../res/images/dubai4.jpg'),
+            require('../../res/images/dubai5.jpg'),
         ]);
 
         return(
@@ -533,7 +548,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            redeem your stay from any time between <Text style={{textDecorationLine:'underline', textDecorationColor:'black'}}> 17 June 2021 to 31 December 2021</Text>
+                            redeem your stay from any time between <Text style={{textDecorationLine:'underline', textDecorationColor:'black'}}> 15 April 2021 to 31 August 2021</Text>
                         </Text>
                     </View>
                     <View style={{
@@ -555,7 +570,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            receive a full refund in case of cancellation, 15 days
+                            receive a full refund, in case of cancellation 21 days
                             prior to the date of your check-in
                         </Text>
                     </View>
@@ -580,7 +595,8 @@ const Dubai = () => {
                         }}>
                             to check for availability of dates and for any further
                             queries and clarifications please reach out to the travel expert at 
-                            <Text style={{fontSize:14, color:'#66a3ff'}}> 080-47185303</Text>
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> +91-9372664111 </Text> or
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> wa.me/919168846444 </Text>
                         </Text>
                     </View>
                     <View style={{
@@ -602,7 +618,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            a travel expert from Malé will get in touch with you within 72 hours to 
+                            a travel expert from <Text style={{fontSize:14, color:'#66a3ff'}}>WTFARES.com</Text> will get in touch with you within 72 hours to 
                             help you book your preferred dates
                         </Text>
                     </View>
@@ -635,10 +651,9 @@ const Dubai = () => {
                         fontWeight: '600',
                         lineHeight: 20
                     }}>
-                            breathe in peace at your own aquatic paradise with endless views 
-                            of the ocean. located at the end of a wooden jetty, this luxurious 
-                            resort offers an uninterrupted sunset view that will stay in your 
-                            heart for a lifetime
+                        wake up to the beautiful skyline of Dubai skyline when you stay in the lap of 
+                        luxury with comfort that's been refined over decades to make sure your stay 
+                        is as memorable as it can get
                     </Text>
                 </View>
             </View>
