@@ -13,7 +13,7 @@ const trendingDestinations = [
         screenName: "DubScreen",
         image: images.Dubai1,
         placeName: "The Burj Khalifa",
-        location: "Dubai",
+        location: "Dubai, UAE",
     },
     {
         id: "three",
