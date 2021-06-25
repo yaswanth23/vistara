@@ -1010,7 +1010,7 @@ const Dubai = () => {
                     alignItems: 'center'
                 }}>
                     <MaterialCommunityIcons name="hand-pointing-right" size={20} color="#003580" />
-                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>get access to</Text>
+                    <Text style={{color:'#003580', fontSize: 14 ,fontWeight: '700', paddingLeft: 5}}>perks included</Text>
                 </View>
                 <View style={{
                     marginTop: 15
@@ -1033,8 +1033,8 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            NU, a Mediterranean sea food restaurant that offers exquisite 3 course 
-                            meals from the French, Italian & Mediterranean cusiness
+                            enjoy complimentary breakfast on your stay and complimentary airport transfers in a 
+                            luxury vehicle
                         </Text>
                     </View>
                     <View style={{
@@ -1056,8 +1056,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            Charcoal Beach Grill, a barbeque restaurant with the best grills & kebabs 
-                            to flatter your tastebuds
+                            get access to a complimentary upgrade to the Luxury Burj View Room
                         </Text>
                     </View>
                     <View style={{
@@ -1079,8 +1078,7 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            KAAGE, a speciality fine dining restaurant for a luxurious culinary 
-                            experience (every day except Friday and dress code is required)
+                            enjoy a premium desert safari along with dinner and transfers
                         </Text>
                     </View>
                     <View style={{
@@ -1102,8 +1100,8 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
-                            please note: any one restaurant is accessible on pre-booking once during 
-                            your 3 night stay
+                            enjoy an exclusive 25% off on spa and a visit to the Dubai Musical Fountain Show 
+                            along with complimentary transfers to and from the Dubai mall
                         </Text>
                     </View>
                 </View>
@@ -1148,7 +1146,8 @@ const Dubai = () => {
                         }}>
                             to check for availability of dates and for any further
                             queries and clarifications please reach out to the travel expert at 
-                            <Text style={{fontSize:14, color:'#66a3ff'}}> 080-47185303</Text>
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> +91-9372664111 </Text> or
+                            <Text style={{fontSize:14, color:'#66a3ff'}}> wa.me/919168846444 </Text>
                         </Text>
                     </View>
                     <View style={{
@@ -1192,6 +1191,28 @@ const Dubai = () => {
                             fontWeight: '600',
                             lineHeight: 20
                         }}>
+                            tourism fee of 25 DHS per night to be paid directly at the hotel
+                        </Text>
+                    </View>
+                    <View style={{
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                        flexDirection: 'row'
+                    }}>
+                        <Text style={{
+                            fontSize: 6,
+                            color: '#808080',
+                            paddingRight: 4,
+                            paddingTop: 6
+                        }}>
+                            {'\u2B24'}
+                        </Text>
+                        <Text style={{
+                            color: '#808080',
+                            fontSize: 13,
+                            fontWeight: '600',
+                            lineHeight: 20
+                        }}>
                             all prices are inclusive of taxes
                         </Text>
                     </View>
@@ -1213,10 +1234,14 @@ const Dubai = () => {
         }
 
         const selectAmount = () => {
-            if(roomType === "Beach Villa"){
-                return "Pay ₹2,37,000"
-            }else if(roomType === "Water Villa") {
-                return "Pay ₹2,60,000"
+            if(roomType === "Deluxe Marina Suite"){
+                return "Pay ₹81,826"
+            }else if(roomType === "Sky Marina Suite") {
+                return "Pay ₹90,917"
+            }else if(roomType === "Panoramic Suite") {
+                return "Pay ₹1,09,101"
+            }else if(roomType === "Club Suite") {
+                return "Pay ₹2,21,839"
             }else {
                 return "Make Selection"
             }
@@ -1326,8 +1351,10 @@ const Dubai = () => {
                                         useNativeAndroidPickerStyle={false}
                                         onValueChange={(value) => setRoomType(value)}
                                         items={[
-                                            { label: "Beach Villa", value: "Beach Villa" },
-                                            { label: "Water Villa", value: "Water Villa" },
+                                            { label: "Deluxe Marina Suite", value: "Deluxe Marina Suite" },
+                                            { label: "Sky Marina Suite", value: "Sky Marina Suite" },
+                                            { label: "Panoramic Suite", value: "Panoramic Suite" },
+                                            { label: "Club Suite", value: "Club Suite" },
                                         ]}
                                         style={{
                                             inputIOS: {
