@@ -10,9 +10,8 @@ import {
     NativeModules,
     Animated
 } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { Feather } from '@expo/vector-icons';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import  trendingDestinations  from "../constants/PopularDestinationData";
 import PopularComponent from "../components/PopularComponent";
